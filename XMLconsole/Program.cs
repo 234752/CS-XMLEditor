@@ -77,15 +77,15 @@ namespace editor
             Console.Write("Tutorial h:"); int tut0 = int.Parse(Console.ReadLine());
             Console.Write("Laboratory h:"); int lab0 = int.Parse(Console.ReadLine());
             Console.Write("Date graded:"); string date0 = Console.ReadLine();
-            double w = ects0 / 30;
+            double w = ects0 / 30.0;
             string weight0 = w.ToString("F2");
 
             XNamespace ns = "timetable.pl";
 
             document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Add(
             new XElement(ns + "COURSE",
-                new XAttribute(ns+"nr", "C"+27),
-                new XAttribute(ns+"semID", "S"+sem0),
+                new XAttribute("nr", "C"+27),
+                new XAttribute("semID", "S"+sem0),
                 new XElement(ns + "NAME", name0),
                 new XElement(ns + "ID", id0),
                 new XElement(ns + "ECTS", ects0),
@@ -100,7 +100,7 @@ namespace editor
 
 
 
-            //if(!ValidateThis(document)) document.Element(ns + "COURSES_LIST").Element(ns + "READ_ME").Element(ns+"LINE").Remove();
+            if(!ValidateThis(document)) document.Element(ns + "COURSES_LIST").Element(ns + "READ_ME").Element(ns+"LINE").Remove();
 
 
 
