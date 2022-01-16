@@ -9,6 +9,13 @@ namespace editor
 {
     class XMLeditor
     {
+        static XDocument LoadDoc()
+        {
+            string filename = "courses.xml";
+            filename = Console.ReadLine();
+            XDocument document = XDocument.Load(filename);
+            return document;
+        }
 
         static bool ValidateThis(XDocument document)
         {
@@ -69,10 +76,7 @@ namespace editor
         static void Main(string[] args)
         {
 
-            string filename = "courses.xml";
-
-            //filename = Console.ReadLine();
-            XDocument courses = XDocument.Load(filename);
+            XDocument courses = LoadDoc();
 
 
             if (ValidateThis(courses)) Console.WriteLine("pogChamp");
@@ -82,7 +86,7 @@ namespace editor
 
             PrintThis(courses);
 
-            //courses.Save(Console.Out);
+            
         }
     }
 }
