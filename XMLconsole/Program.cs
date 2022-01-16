@@ -69,14 +69,36 @@ namespace editor
 
         static bool AddCourse(XDocument document)
         {
+
+            Console.Write("Name:"); string name0 = Console.ReadLine();
+            Console.Write("ID:"); string id0 = Console.ReadLine();
+            Console.Write("ECTS:"); int ects0 = int.Parse(Console.ReadLine());
+            Console.Write("Lecture h:"); int lec0 = int.Parse(Console.ReadLine());
+            Console.Write("Tutorial h:"); int tut0 = int.Parse(Console.ReadLine());
+            Console.Write("Laboratory h:"); int lab0 = int.Parse(Console.ReadLine());
+            Console.Write("Date graded:"); string date0 = Console.ReadLine();
+            double w = ects0 / 30;
+            string weight0 = w.ToString("F2");
+
             XNamespace ns = "timetable.pl";
 
-            document.Element(ns + "COURSES_LIST").Element(ns + "READ_ME").Add(
-            new XElement(ns+"LINE","pogchamp"
-                
-            ));
+            document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Add(
+            new XElement(ns + "COURSE",
+                new XElement(ns + "NAME", name0),
+                new XElement(ns + "ID", id0),
+                new XElement(ns + "ECTS", ects0),
+                new XElement(ns + "LECTURE_H", lec0),
+                new XElement(ns + "TUTORIAL_H", tut0),
+                new XElement(ns + "LABORATORY_H", lab0),
+                new XElement(ns + "GRADING_DATE", date0),
+                new XElement(ns + "WEIGHT", weight0)
+                ));
 
-            if(!ValidateThis(document)) document.Element(ns + "COURSES_LIST").Element(ns + "READ_ME").Element(ns+"LINE").Remove();
+
+
+
+
+            //if(!ValidateThis(document)) document.Element(ns + "COURSES_LIST").Element(ns + "READ_ME").Element(ns+"LINE").Remove();
 
 
 
