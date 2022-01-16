@@ -71,7 +71,7 @@ namespace editor
         {
             XNamespace ns = "timetable.pl";
 
-            document.Element(ns+"Snippets").Element(ns+"Snippet").Add(
+            document.Element(ns+"COURSES_LIST").Element(ns+"READ_ME").Add(
             new XElement("pogchamp",
                 new XAttribute("attr", "value of attr"),
                 new XElement("elem", "value of elem")
