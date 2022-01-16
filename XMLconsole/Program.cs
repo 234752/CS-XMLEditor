@@ -69,7 +69,7 @@ namespace editor
 
         static bool AddCourse(XDocument document)
         {
-
+            Console.Write("Semester:"); string sem0 = Console.ReadLine();
             Console.Write("Name:"); string name0 = Console.ReadLine();
             Console.Write("ID:"); string id0 = Console.ReadLine();
             Console.Write("ECTS:"); int ects0 = int.Parse(Console.ReadLine());
@@ -84,13 +84,15 @@ namespace editor
 
             document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Add(
             new XElement(ns + "COURSE",
+                new XAttribute(ns+"nr", "C"+27),
+                new XAttribute(ns+"semID", "S"+sem0),
                 new XElement(ns + "NAME", name0),
                 new XElement(ns + "ID", id0),
                 new XElement(ns + "ECTS", ects0),
                 new XElement(ns + "LECTURE_H", lec0),
                 new XElement(ns + "TUTORIAL_H", tut0),
                 new XElement(ns + "LABORATORY_H", lab0),
-                new XElement(ns + "GRADING_DATE", date0),
+                new XElement(ns + "GRADING_DATE", new XAttribute("graded", true), date0),
                 new XElement(ns + "WEIGHT", weight0)
                 ));
 
