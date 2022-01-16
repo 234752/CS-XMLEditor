@@ -1,3 +1,8 @@
+using System.Xml;
+using System;
+
+
+
 namespace XMLeditor
 {
     internal static class Program
@@ -10,6 +15,23 @@ namespace XMLeditor
         {
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+            
+
+            XmlDocument doc = new XmlDocument();
+            
+            
+
+            doc.Load("courses.xml");
+            
+            doc.Save(Console.Out);
+
+
         }
+
+        
+
+
     }
+
+ 
 }
