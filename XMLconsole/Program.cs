@@ -30,10 +30,20 @@ namespace editor
         {
             var baseNamespace = new XmlNamespaceManager(new NameTable());
             baseNamespace.AddNamespace("n", "timetable.pl");
-            var name = document.XPathSelectElement("/n:COURSES_LIST/n:READ_ME/n:INDEX", baseNamespace).Value;
+            
+            int i = 0;
+            foreach (XElement el in document.XPathSelectElements("/n:COURSES_LIST/n:COURSES/n:COURSE", baseNamespace))
+            {
+                
+                var name = document.XPathSelectElements("/n:COURSES_LIST/n:COURSES/n:COURSE/n:NAME | /n:COURSES_LIST/n:COURSES/n:COURSE/n:POLISH_NAME", baseNamespace).ElementAt(i).Value;
+                
+                i++;
+                Console.WriteLine(name);
+            }
+            
 
-            Console.WriteLine(name);
         }
+
 
         static void Main(string[] args)
         {
@@ -46,6 +56,8 @@ namespace editor
 
             if (ValidateThis(courses)) Console.WriteLine("pogChamp");
             else Console.WriteLine("notPogChamp");
+
+            
 
             PrintThis(courses);
 
