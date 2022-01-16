@@ -9,10 +9,8 @@ namespace editor
 {
     class XMLeditor
     {
-        static XDocument LoadDoc()
+        static XDocument LoadDoc(string filename)
         {
-            string filename = "courses.xml";
-            filename = Console.ReadLine();
             XDocument document = XDocument.Load(filename);
             return document;
         }
@@ -40,8 +38,7 @@ namespace editor
             
             int i = 0;
             foreach (XElement el in document.XPathSelectElements("/n:COURSES_LIST/n:COURSES/n:COURSE", baseNamespace))
-            {
-                
+            { 
                 var name = document.XPathSelectElements("/n:COURSES_LIST/n:COURSES/n:COURSE/n:NAME | /n:COURSES_LIST/n:COURSES/n:COURSE/n:POLISH_NAME", baseNamespace).ElementAt(i).Value;
                 string s = "                                                  ";
                 name += s.Substring(name.Length);
@@ -68,21 +65,36 @@ namespace editor
                 i++;
                 Console.WriteLine(name + id  + ECTS  + lectures  + tutorials  + labs  + date  + weight);
             }
-            
-
         }
 
+        static bool AddCourse(XDocument document)
+        {
+            XNamespace ns = "timetable.pl";
+
+            document.Element(ns+"Snippets").Element(ns+"Snippet").Add(
+            new XElement("pogchamp",
+                new XAttribute("attr", "value of attr"),
+                new XElement("elem", "value of elem")
+            )
+            
+    );
+
+            return false;                                               //DELETE THIS LATER
+        }
 
         static void Main(string[] args)
         {
+            string filename = "courses.xml";
+            filename = Console.ReadLine();
+            XDocument courses = LoadDoc(filename);
 
-            XDocument courses = LoadDoc();
 
+            //if (ValidateThis(courses)) Console.WriteLine("pogChamp");
+            //else Console.WriteLine("notPogChamp");
 
-            if (ValidateThis(courses)) Console.WriteLine("pogChamp");
-            else Console.WriteLine("notPogChamp");
+            AddCourse(courses);
+            courses.Save(filename);
 
-            
 
             PrintThis(courses);
 
