@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="timetable.pl"
+           elementFormDefault="qualified"
+           xmlns:t="timetable.pl" >
+<xs:include schemaLocation="types.xsd" />
+
+
+	<xs:element name="COURSES_LIST">
+
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="1" ref="t:READ_ME" />
+				<xs:element ref="t:COURSES" />
+				<xs:element ref="t:SEMESTERS" />
+			</xs:sequence>
+		</xs:complexType>
+		
+<!--KEYS + KEYREFS-->		
+		<xs:key name="key_semester">													
+			<xs:selector xpath="./t:SEMESTERS/t:SEMESTER"/>
+			<xs:field xpath="@semID"/>
+		</xs:key>
+
+		<xs:keyref name="keyref_semester" refer="t:key_semester">
+			<xs:selector xpath="./t:COURSES/t:COURSE"/>
+			<xs:field xpath="@semID"/>
+		</xs:keyref>
+			
+	</xs:element>
+
+<!--FORMAT OF README-->
+	<xs:element name="READ_ME">															
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AUTHOR" type="t:shortText" />
+				<xs:element name="INDEX" type="t:index" />
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="LINE" type="t:longText" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+<!--FORMAT OF COURSES-->	
+	<xs:element name="COURSES">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="COURSE">	
+					<xs:complexType>
+						<xs:sequence>
+							<xs:choice>
+								<xs:element name="NAME" type="t:shortText" />
+								<xs:element name="POLISH_NAME" type="t:shortText" />
+							</xs:choice>
+							<xs:element name="ID" type="t:courseNumber" />
+							<xs:element name="ECTS" type="t:points"/>
+							<xs:group ref="t:amountOfHours" />
+							<xs:element name="GRADING_DATE" type="t:gradingForm" nillable="true" />	
+							<xs:element name="WEIGHT" type="t:decimal2" />
+						</xs:sequence>
+						<xs:attribute name="nr" type="xs:ID" use="required" />
+						<xs:attribute name="semID" type="xs:IDREF" use="required" />						
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+<!--DEFINITION OF GROUP-->	
+	<xs:group name="amountOfHours">
+		<xs:sequence>
+			<xs:element name="LECTURE_H" type="t:hoursAmount" />
+			<xs:element name="TUTORIAL_H" type="t:hoursAmount" />
+			<xs:element name="LABORATORY_H" type="t:hoursAmount" />
+		</xs:sequence>
+	</xs:group>
+
+<!--FORMAT OF SEMESTERS-->	
+	<xs:element name="SEMESTERS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="4" name="SEMESTER">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="S_NAME" type="t:semName" />
+							<xs:element name="END_DATE" type="xs:date" />
+							<xs:element name="END_HOUR" type="xs:time" />
+						</xs:sequence>
+						<xs:attribute name="semID" type="xs:ID" use="required" />
+						<xs:attribute name="year" type="xs:integer" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+
+</xs:schema>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="timetable.pl"
+           elementFormDefault="qualified"
+           xmlns:t="timetable.pl">
+
+
+
+	<!--TEXT ELEMENTS-->
+	<xs:simpleType name="longText">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="shortText">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!--ELEMENTS FROM README-->	
+	<xs:simpleType name="index">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="[0-9]{6}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--ELEMENTS FROM COURSE-->
+	<xs:simpleType name="courseNumber">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{2} [0-9]{2} [0-9]{4} [0-9]{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="points">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="hoursAmount">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="gradingForm">
+		<xs:simpleContent>
+			<xs:extension base="xs:date" >
+				<xs:attribute name="graded" type="xs:boolean"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="decimal2"> 
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--ELEMENTS FROM SEMESTER-->
+	<xs:simpleType name="semName" >
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Semester I"/>
+			<xs:enumeration value="Semester II"/>
+			<xs:enumeration value="Semester III"/>
+			<xs:enumeration value="Semester IV"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+</xs:schema>
