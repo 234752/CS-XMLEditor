@@ -71,13 +71,14 @@ namespace editor
         {
             XNamespace ns = "timetable.pl";
 
-            document.Element(ns+"COURSES_LIST").Element(ns+"READ_ME").Add(
-            new XElement("pogchamp",
-                new XAttribute("attr", "value of attr"),
-                new XElement("elem", "value of elem")
-            )
-            
-    );
+            document.Element(ns + "COURSES_LIST").Element(ns + "READ_ME").Add(
+            new XElement(ns+"LINE","pogchamp"
+                
+            ));
+
+            if(!ValidateThis(document)) document.Element(ns + "COURSES_LIST").Element(ns + "READ_ME").Element(ns+"LINE").Remove();
+
+
 
             return false;                                               //DELETE THIS LATER
         }
