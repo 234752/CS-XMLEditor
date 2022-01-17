@@ -15,6 +15,7 @@ namespace CourseEditor
 
         private void ClearLabels()
         {
+            this.authorLabel.Text = "AUTHOR";
             this.numLabel.Text = "No";
             this.nameLabel.Text = "NAME";
             this.idLabel.Text = "ID";
@@ -28,13 +29,18 @@ namespace CourseEditor
 
         private void DisplayCourses(XDocument document)
         {
+            XNamespace ns = "timetable.pl";
             var baseNamespace = new XmlNamespaceManager(new NameTable());
             baseNamespace.AddNamespace("n", "timetable.pl");
-            
+
+            this.authorLabel.Text = "author: " + document.XPathSelectElements("/n:COURSES_LIST/n:READ_ME/n:AUTHOR", baseNamespace).First().Value
+                + ",     id: " + document.XPathSelectElements("/n:COURSES_LIST/n:READ_ME/n:INDEX", baseNamespace).First().Value;
+
             int i = 0;
             foreach (XElement el in document.XPathSelectElements("/n:COURSES_LIST/n:COURSES/n:COURSE", baseNamespace))
             {
-                this.numLabel.Text += "\n" + i.ToString();
+                this.numLabel.Text += "\n" + document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(i).Attribute("nr").Value.Substring(1);
+
                 this.nameLabel.Text += "\n"+ document.XPathSelectElements("/n:COURSES_LIST/n:COURSES/n:COURSE/n:NAME | /n:COURSES_LIST/n:COURSES/n:COURSE/n:POLISH_NAME", baseNamespace).ElementAt(i).Value;
 
                 this.idLabel.Text += "\n" + document.XPathSelectElements("/n:COURSES_LIST/n:COURSES/n:COURSE/n:ID", baseNamespace).ElementAt(i).Value;
@@ -56,12 +62,31 @@ namespace CourseEditor
             }
         }
 
+        private bool ValidateDocument(XDocument document)
+        {
+            XmlSchemaSet schemas = new XmlSchemaSet();
+            schemas.Add(null, "format.xsd");
+            schemas.Add(null, "types.xsd");
+
+
+            try { document.Validate(schemas, null); }
+            catch (XmlSchemaException xsd)
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void loadButton_Click(object sender, EventArgs e)
         {
             string filename = this.fileInput.Text;
             XDocument document = XDocument.Load(filename);
-            ClearLabels();
-            DisplayCourses(document);
+
+            if (ValidateDocument(document))
+            {
+                ClearLabels();
+                DisplayCourses(document);
+            }
         }
     }
 }
