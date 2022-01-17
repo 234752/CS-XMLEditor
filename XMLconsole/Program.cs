@@ -82,9 +82,11 @@ namespace editor
 
             XNamespace ns = "timetable.pl";
 
+            int number0 = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").Count();
+
             document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Add(
             new XElement(ns + "COURSE",
-                new XAttribute("nr", "C"+27),
+                new XAttribute("nr", "C"+number0),
                 new XAttribute("semID", "S"+sem0),
                 new XElement(ns + "NAME", name0),
                 new XElement(ns + "ID", id0),
@@ -98,9 +100,9 @@ namespace editor
 
 
 
+            //Console.WriteLine(document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants().ElementAt(1).Element(ns+"ID").Value);
 
-
-            if(!ValidateThis(document)) document.Element(ns + "COURSES_LIST").Element(ns + "READ_ME").Element(ns+"LINE").Remove();
+            if(!ValidateThis(document)) document.Element(ns + "COURSES_LIST").Element(ns+"COURSES").Descendants(ns + "COURSE").ElementAt(number0-1).Remove();
 
 
 
@@ -117,7 +119,11 @@ namespace editor
             //if (ValidateThis(courses)) Console.WriteLine("pogChamp");
             //else Console.WriteLine("notPogChamp");
 
-            AddCourse(courses);
+            //AddCourse(courses);
+            XNamespace ns = "timetable.pl";
+
+            Console.WriteLine(courses.Element(ns+"COURSES_LIST").Element(ns+"COURSES").Descendants(ns+"COURSE").Last().Attribute("nr").Value);
+
             courses.Save(filename);
 
 
