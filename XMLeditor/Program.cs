@@ -5,14 +5,10 @@ using System.Xml;
 using System.Xml.XPath;
 
 
-namespace XMLeditor
+namespace editor
 {
-    internal static class Program
+    class XMLeditor
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        [STAThread]
         static XDocument LoadDoc(string filename)
         {
             XDocument document = XDocument.Load(filename);
@@ -39,7 +35,7 @@ namespace XMLeditor
         {
             var baseNamespace = new XmlNamespaceManager(new NameTable());
             baseNamespace.AddNamespace("n", "timetable.pl");
-            string result;
+
             int i = 0;
             foreach (XElement el in document.XPathSelectElements("/n:COURSES_LIST/n:COURSES/n:COURSE", baseNamespace))
             {
@@ -67,7 +63,7 @@ namespace XMLeditor
                 s = "        ";
                 weight += s.Substring(weight.Length);
                 i++;
-                result=(name + id + ECTS + lectures + tutorials + labs + date + weight) + "\n";
+                Console.WriteLine(name + id + ECTS + lectures + tutorials + labs + date + weight);
             }
         }
 
@@ -113,34 +109,28 @@ namespace XMLeditor
 
             return false;                                               //DELETE THIS LATER
         }
-        static void Main()
+
+        static void Main(string[] args)
         {
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
-
-
             string filename = "courses.xml";
-           // filename = Console.ReadLine();
-            XDocument courses = LoadDoc(filename);
+            //filename = Console.ReadLine();
+            //XDocument courses = LoadDoc(filename);
 
 
+            //if (ValidateThis(courses)) Console.WriteLine("pogChamp");
+            //else Console.WriteLine("notPogChamp");
 
             //AddCourse(courses);
-            XNamespace ns = "timetable.pl";
+            //XNamespace ns = "timetable.pl";
 
+            //Console.WriteLine(courses.Element(ns+"COURSES_LIST").Element(ns+"COURSES").Descendants(ns+"COURSE").Last().Attribute("nr").Value);
 
             //courses.Save(filename);
 
 
-            PrintThis(courses);
+            //PrintThis(courses);
 
 
         }
-
-        
-
-
     }
-
- 
 }
