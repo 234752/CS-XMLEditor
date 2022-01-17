@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+
+<COURSES_LIST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			  xsi:schemaLocation="timetable.pl format.xsd" 
+			  xmlns="timetable.pl">
+
+	<READ_ME>
+		<AUTHOR>Patryk Giełczyński</AUTHOR>
+		<INDEX>234752</INDEX>
+		<LINE>This is a list of courses from my study programme.</LINE>
+		<LINE>It is based on ECTS study programme for Information Technology (programy.p.lodz.pl).</LINE>
+	</READ_ME>
+
+	<COURSES>
+		<COURSE nr="C1" semID="S1">
+			<NAME>Engineering Drawing</NAME>
+			<ID>04 51 0043 07</ID>
+			<ECTS>2</ECTS>
+			<LECTURE_H>10</LECTURE_H>
+			<TUTORIAL_H>20</TUTORIAL_H>
+			<LABORATORY_H>0</LABORATORY_H>
+			<GRADING_DATE graded="true">2021-01-27</GRADING_DATE>
+			<WEIGHT>0.07</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C2" semID="S1">
+			<NAME>Physics</NAME>
+			<ID>07 01 1020 20</ID>
+			<ECTS>3</ECTS>
+			<LECTURE_H>30</LECTURE_H>
+			<TUTORIAL_H>15</TUTORIAL_H>
+			<LABORATORY_H>0</LABORATORY_H>
+			<GRADING_DATE graded="true">2021-02-23</GRADING_DATE>
+			<WEIGHT>0.10</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C3" semID="S1">
+			<NAME>Algorithms and Data Structures</NAME>
+			<ID>07 67 1010 30</ID>
+			<ECTS>5</ECTS>
+			<LECTURE_H>30</LECTURE_H>
+			<TUTORIAL_H>30</TUTORIAL_H>
+			<LABORATORY_H>0</LABORATORY_H>
+			<GRADING_DATE graded="true">2021-02-26</GRADING_DATE>
+			<WEIGHT>0.17</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C4" semID="S1">
+			<NAME>Fundamentals of Programming</NAME>
+			<ID>07 67 1030 30</ID>
+			<ECTS>5</ECTS>
+			<LECTURE_H>30</LECTURE_H>
+			<TUTORIAL_H>0</TUTORIAL_H>
+			<LABORATORY_H>30</LABORATORY_H>
+			<GRADING_DATE graded="true">2021-02-04</GRADING_DATE>
+			<WEIGHT>0.17</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C5" semID="S1">
+			<NAME>Introduction to Information Technology</NAME>
+			<ID>07 67 1040 30</ID>
+			<ECTS>3</ECTS>
+			<LECTURE_H>15</LECTURE_H>
+			<TUTORIAL_H>0</TUTORIAL_H>
+			<LABORATORY_H>30</LABORATORY_H>
+			<GRADING_DATE graded="true">2021-01-20</GRADING_DATE>
+			<WEIGHT>0.10</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C6" semID="S1">
+			<NAME>Mathematics 1</NAME>
+			<ID>21 01 1254 00</ID>
+			<ECTS>8</ECTS>
+			<LECTURE_H>30</LECTURE_H>
+			<TUTORIAL_H>90</TUTORIAL_H>
+			<LABORATORY_H>0</LABORATORY_H>
+			<GRADING_DATE graded="true">2021-02-16</GRADING_DATE>
+			<WEIGHT>0.27</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C7" semID="S1">
+			<NAME>Study Skills for University</NAME>
+			<ID>22 91 1552 00</ID>
+			<ECTS>1</ECTS>
+			<LECTURE_H>0</LECTURE_H>
+			<TUTORIAL_H>30</TUTORIAL_H>
+			<LABORATORY_H>0</LABORATORY_H>
+			<GRADING_DATE graded="true">2021-02-25</GRADING_DATE>
+			<WEIGHT>0.03</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C8" semID="S1">
+			<NAME>Academic English for Engineers 1</NAME>
+			<ID>22 91 1620 10</ID>
+			<ECTS>3</ECTS>
+			<LECTURE_H>0</LECTURE_H>
+			<TUTORIAL_H>60</TUTORIAL_H>
+			<LABORATORY_H>0</LABORATORY_H>
+			<GRADING_DATE graded="true">2021-02-23</GRADING_DATE>
+			<WEIGHT>0.10</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C9" semID="S2">
+			<NAME>Electronics Foundation</NAME>
+			<ID>07 67 2010 30</ID>
+			<ECTS>3</ECTS>
+			<LECTURE_H>15</LECTURE_H>
+			<TUTORIAL_H>0</TUTORIAL_H>
+			<LABORATORY_H>30</LABORATORY_H>
+			<GRADING_DATE graded="true">2021-06-24</GRADING_DATE>
+			<WEIGHT>0.10</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C10" semID="S2">
+			<NAME>Computer Architecture and Low-Level Programming</NAME>
+			<ID>07 67 2020 30</ID>
+			<ECTS>3</ECTS>
+			<LECTURE_H>15</LECTURE_H>
+			<TUTORIAL_H>0</TUTORIAL_H>
+			<LABORATORY_H>30</LABORATORY_H>
+			<GRADING_DATE graded="true">2021-09-10</GRADING_DATE>
+			<WEIGHT>0.10</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C11" semID="S2">
+			<NAME>Operating Systems</NAME>
+			<ID>07 67 2030 30</ID>
+			<ECTS>4</ECTS>
+			<LECTURE_H>15</LECTURE_H>
+			<TUTORIAL_H>0</TUTORIAL_H>
+			<LABORATORY_H>30</LABORATORY_H>
+			<GRADING_DATE graded="true">2021-07-02</GRADING_DATE>
+			<WEIGHT>0.13</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C12" semID="S2">
+			<NAME>Computer Aided Design</NAME>
+			<ID>07 67 2040 30</ID>
+			<ECTS>3</ECTS>
+			<LECTURE_H>15</LECTURE_H>
+			<TUTORIAL_H>0</TUTORIAL_H>
+			<LABORATORY_H>30</LABORATORY_H>
+			<GRADING_DATE graded="true">2021-06-16</GRADING_DATE>
+			<WEIGHT>0.10</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C13" semID="S2">
+			<NAME>Modern Physics</NAME>
+			<ID>07 67 2050 30</ID>
+			<ECTS>3</ECTS>
+			<LECTURE_H>20</LECTURE_H>
+			<TUTORIAL_H>0</TUTORIAL_H>
+			<LABORATORY_H>20</LABORATORY_H>
+			<GRADING_DATE graded="true">2021-06-17</GRADING_DATE>
+			<WEIGHT>0.10</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C14" semID="S2">
+			<NAME>Mathematics 2</NAME>
+			<ID>21 01 1255 00</ID>
+			<ECTS>8</ECTS>
+			<LECTURE_H>55</LECTURE_H>
+			<TUTORIAL_H>65</TUTORIAL_H>
+			<LABORATORY_H>0</LABORATORY_H>
+			<GRADING_DATE graded="true">2021-07-02</GRADING_DATE>
+			<WEIGHT>0.27</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C15" semID="S2">
+			<NAME>Introduction to PBL</NAME>
+			<ID>22 91 1550 00</ID>
+			<ECTS>1</ECTS>
+			<LECTURE_H>0</LECTURE_H>
+			<TUTORIAL_H>15</TUTORIAL_H>
+			<LABORATORY_H>0</LABORATORY_H>
+			<GRADING_DATE graded="true">2021-06-30</GRADING_DATE>
+			<WEIGHT>0.03</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C16" semID="S2">
+			<NAME>Civic Knowledge and Engagement 1</NAME>
+			<ID>22 91 1553 10</ID>
+			<ECTS>1</ECTS>
+			<LECTURE_H>0</LECTURE_H>
+			<TUTORIAL_H>0</TUTORIAL_H>
+			<LABORATORY_H>0</LABORATORY_H>
+			<GRADING_DATE graded="true">2021-08-27</GRADING_DATE>
+			<WEIGHT>0.03</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C17" semID="S2">
+			<NAME>Academic English for Engineers 2</NAME>
+			<ID>22 91 1620 20</ID>
+			<ECTS>1</ECTS>
+			<LECTURE_H>0</LECTURE_H>
+			<TUTORIAL_H>30</TUTORIAL_H>
+			<LABORATORY_H>0</LABORATORY_H>
+			<GRADING_DATE graded="true" >2021-06-26</GRADING_DATE>
+			<WEIGHT>0.03</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C18" semID="S2">
+			<POLISH_NAME>Jezyk Obcy Blok 1</POLISH_NAME>
+			<ID>22 92 0500 10</ID>
+			<ECTS>3</ECTS>
+			<LECTURE_H>0</LECTURE_H>
+			<TUTORIAL_H>60</TUTORIAL_H>
+			<LABORATORY_H>0</LABORATORY_H>
+			<GRADING_DATE graded="true" >2021-06-23</GRADING_DATE>
+			<WEIGHT>0.10</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C19" semID="S3">
+			<NAME>Object Oriented Programming</NAME>
+			<ID>07 67 3010 30</ID>
+			<ECTS>5</ECTS>
+			<LECTURE_H>30</LECTURE_H>
+			<TUTORIAL_H>0</TUTORIAL_H>
+			<LABORATORY_H>30</LABORATORY_H>
+			<GRADING_DATE graded="false" xsi:nil="true"></GRADING_DATE>
+			<WEIGHT>0.17</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C20" semID="S3">
+			<NAME>Network Technologies</NAME>
+			<ID>07 67 3020 30</ID>
+			<ECTS>4</ECTS>
+			<LECTURE_H>30</LECTURE_H>
+			<TUTORIAL_H>0</TUTORIAL_H>
+			<LABORATORY_H>30</LABORATORY_H>
+			<GRADING_DATE graded="false" xsi:nil="true"></GRADING_DATE>
+			<WEIGHT>0.13</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C21" semID="S3">
+			<NAME>Database Fundamentals</NAME>
+			<ID>07 67 3030 30</ID>
+			<ECTS>4</ECTS>
+			<LECTURE_H>30</LECTURE_H>
+			<TUTORIAL_H>0</TUTORIAL_H>
+			<LABORATORY_H>30</LABORATORY_H>
+			<GRADING_DATE graded="false" xsi:nil="true"></GRADING_DATE>
+			<WEIGHT>0.13</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C22" semID="S3">
+			<NAME>XML Technologies</NAME>
+			<ID>07 67 3040 30</ID>
+			<ECTS>3</ECTS>
+			<LECTURE_H>15</LECTURE_H>
+			<TUTORIAL_H>0</TUTORIAL_H>
+			<LABORATORY_H>30</LABORATORY_H>
+			<GRADING_DATE graded="false" xsi:nil="true"></GRADING_DATE>
+			<WEIGHT>0.10</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C23" semID="S3">
+			<NAME>Mathematics 3</NAME>
+			<ID>21 01 1256 00</ID>
+			<ECTS>3</ECTS>
+			<LECTURE_H>20</LECTURE_H>
+			<TUTORIAL_H>25</TUTORIAL_H>
+			<LABORATORY_H>0</LABORATORY_H>
+			<GRADING_DATE graded="false" xsi:nil="true"></GRADING_DATE>
+			<WEIGHT>0.10</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C24" semID="S3">
+			<NAME>Civic Knowledge and Engagement 2</NAME>
+			<ID>22 91 1553 20</ID>
+			<ECTS>1</ECTS>
+			<LECTURE_H>0</LECTURE_H>
+			<TUTORIAL_H>0</TUTORIAL_H>
+			<LABORATORY_H>0</LABORATORY_H>
+			<GRADING_DATE graded="false" xsi:nil="true"></GRADING_DATE>
+			<WEIGHT>0.03</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C25" semID="S3">
+			<NAME>Academic English for Engineers 3</NAME>
+			<ID>22 91 1620 30</ID>
+			<ECTS>2</ECTS>
+			<LECTURE_H>0</LECTURE_H>
+			<TUTORIAL_H>30</TUTORIAL_H>
+			<LABORATORY_H>0</LABORATORY_H>
+			<GRADING_DATE graded="false" xsi:nil="true"></GRADING_DATE>
+			<WEIGHT>0.07</WEIGHT>
+		</COURSE>
+
+		<COURSE nr="C26" semID="S3">
+			<POLISH_NAME>Jezyk Obcy Blok 2</POLISH_NAME>
+			<ID>22 92 0500 20</ID>
+			<ECTS>3</ECTS>
+			<LECTURE_H>0</LECTURE_H>
+			<TUTORIAL_H>60</TUTORIAL_H>
+			<LABORATORY_H>0</LABORATORY_H>
+			<GRADING_DATE graded="false" xsi:nil="true"></GRADING_DATE>
+			<WEIGHT>0.10</WEIGHT>
+		</COURSE>
+	</COURSES>
+
+
+	<SEMESTERS>
+
+		<SEMESTER semID="S1" year="1">
+			<S_NAME>Semester I</S_NAME>
+			<END_DATE>2021-03-05</END_DATE>
+			<END_HOUR>14:01:00</END_HOUR>
+		</SEMESTER>
+
+		<SEMESTER semID="S2" year="1">
+			<S_NAME>Semester II</S_NAME>
+			<END_DATE>2021-09-21</END_DATE>
+			<END_HOUR>09:00:00</END_HOUR>
+		</SEMESTER>
+
+		<SEMESTER semID="S3" year="2">
+			<S_NAME>Semester III</S_NAME>
+			<END_DATE>2022-03-04</END_DATE>
+			<END_HOUR>09:00:00</END_HOUR>
+		</SEMESTER>
+
+	</SEMESTERS>
+
+</COURSES_LIST>
