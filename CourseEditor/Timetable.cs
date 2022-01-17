@@ -8,6 +8,7 @@ namespace CourseEditor
 {
     public partial class Timetable : Form
     {
+        public XDocument document;
         public Timetable()
         {
             InitializeComponent();
@@ -17,6 +18,7 @@ namespace CourseEditor
         {
             this.authorLabel.Text = "AUTHOR";
             this.numLabel.Text = "No";
+            this.semLabel.Text = "SEMESTER";
             this.nameLabel.Text = "NAME";
             this.idLabel.Text = "ID";
             this.ectsLabel.Text = "ECTS";
@@ -27,7 +29,7 @@ namespace CourseEditor
             this.weightLabel.Text = "WEIGHT";
         }
 
-        private void DisplayCourses(XDocument document)
+        private void DisplayCourses()
         {
             XNamespace ns = "timetable.pl";
             var baseNamespace = new XmlNamespaceManager(new NameTable());
@@ -40,6 +42,8 @@ namespace CourseEditor
             foreach (XElement el in document.XPathSelectElements("/n:COURSES_LIST/n:COURSES/n:COURSE", baseNamespace))
             {
                 this.numLabel.Text += "\n" + document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(i).Attribute("nr").Value.Substring(1);
+
+                this.semLabel.Text += "\n" + document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(i).Attribute("semID").Value.Substring(1);
 
                 this.nameLabel.Text += "\n"+ document.XPathSelectElements("/n:COURSES_LIST/n:COURSES/n:COURSE/n:NAME | /n:COURSES_LIST/n:COURSES/n:COURSE/n:POLISH_NAME", baseNamespace).ElementAt(i).Value;
 
@@ -62,7 +66,7 @@ namespace CourseEditor
             }
         }
 
-        private bool ValidateDocument(XDocument document)
+        private bool ValidateDocument()
         {
             XmlSchemaSet schemas = new XmlSchemaSet();
             schemas.Add(null, "format.xsd");
@@ -77,16 +81,68 @@ namespace CourseEditor
             return true;
         }
 
+        private bool AddCourse()
+        {
+            string sem0 = this.semInput.Text;
+            string name0 = this.nameInput.Text;
+            string id0 = this.idInput.Text;
+            int ects0 = int.Parse(this.ectsInput.Text);
+            int lec0 = int.Parse(this.lecInput.Text);
+            int tut0 = int.Parse(this.tutInput.Text);
+            int lab0 = int.Parse(this.labInput.Text);
+            string date0 = this.dateInput.Text;
+            double w = ects0 / 30.0;
+            string weight0 = w.ToString("F2");
+
+            XNamespace ns = "timetable.pl";
+
+            string n0 = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").Last().Attribute("nr").Value;
+            int number0 = int.Parse(n0.Substring(1)) + 1;
+
+            document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Add(
+            new XElement(ns + "COURSE",
+                new XAttribute("nr", "C" + number0),
+                new XAttribute("semID", "S" + sem0),
+                new XElement(ns + "NAME", name0),
+                new XElement(ns + "ID", id0),
+                new XElement(ns + "ECTS", ects0),
+                new XElement(ns + "LECTURE_H", lec0),
+                new XElement(ns + "TUTORIAL_H", tut0),
+                new XElement(ns + "LABORATORY_H", lab0),
+                new XElement(ns + "GRADING_DATE", new XAttribute("graded", true), date0),
+                new XElement(ns + "WEIGHT", weight0)
+                ));
+
+            
+
+
+
+            if (!ValidateDocument()) document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(number0 - 1).Remove();
+
+            
+
+            return false;                                               //DELETE THIS LATER
+        }
+
         private void loadButton_Click(object sender, EventArgs e)
         {
             string filename = this.fileInput.Text;
-            XDocument document = XDocument.Load(filename);
+            document = XDocument.Load(filename);
 
-            if (ValidateDocument(document))
+            if (ValidateDocument())
             {
                 ClearLabels();
-                DisplayCourses(document);
+                DisplayCourses();
             }
         }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            AddCourse();
+            ClearLabels();
+            DisplayCourses();
+        }
+
+
     }
 }
