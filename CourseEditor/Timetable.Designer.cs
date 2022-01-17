@@ -38,12 +38,14 @@
             this.labLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.weightLabel = new System.Windows.Forms.Label();
+            this.loadButton = new System.Windows.Forms.Button();
+            this.fileInput = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // authorLabel
             // 
             this.authorLabel.AutoSize = true;
-            this.authorLabel.Location = new System.Drawing.Point(7, 6);
+            this.authorLabel.Location = new System.Drawing.Point(12, 9);
             this.authorLabel.Name = "authorLabel";
             this.authorLabel.Size = new System.Drawing.Size(54, 15);
             this.authorLabel.TabIndex = 0;
@@ -130,11 +132,30 @@
             this.weightLabel.TabIndex = 9;
             this.weightLabel.Text = "WEIGHT";
             // 
+            // loadButton
+            // 
+            this.loadButton.Location = new System.Drawing.Point(1024, 12);
+            this.loadButton.Name = "loadButton";
+            this.loadButton.Size = new System.Drawing.Size(75, 23);
+            this.loadButton.TabIndex = 10;
+            this.loadButton.Text = "Load XML";
+            this.loadButton.UseVisualStyleBackColor = true;
+            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
+            // 
+            // fileInput
+            // 
+            this.fileInput.Location = new System.Drawing.Point(918, 13);
+            this.fileInput.Name = "fileInput";
+            this.fileInput.Size = new System.Drawing.Size(100, 23);
+            this.fileInput.TabIndex = 11;
+            // 
             // Timetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1111, 643);
+            this.Controls.Add(this.fileInput);
+            this.Controls.Add(this.loadButton);
             this.Controls.Add(this.weightLabel);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.labLabel);
@@ -164,5 +185,7 @@
         private Label labLabel;
         private Label dateLabel;
         private Label weightLabel;
+        private Button loadButton;
+        private TextBox fileInput;
     }
 }

@@ -6,5 +6,10 @@ namespace CourseEditor
         {
             InitializeComponent();
         }
+
+        private void loadButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
