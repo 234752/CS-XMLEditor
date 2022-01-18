@@ -9,6 +9,7 @@ namespace CourseEditor
     public partial class Timetable : Form
     {
         public XDocument document;
+
         public Timetable()
         {
             InitializeComponent();
@@ -32,9 +33,9 @@ namespace CourseEditor
 
         private void DisplayCourses()
         {
-            XNamespace ns = "timetable.pl";
             var baseNamespace = new XmlNamespaceManager(new NameTable());
             baseNamespace.AddNamespace("n", "timetable.pl");
+            XNamespace ns = "timetable.pl";
 
             this.authorLabel.Text = "author: " + document.XPathSelectElements("/n:COURSES_LIST/n:READ_ME/n:AUTHOR", baseNamespace).First().Value
                 + ",     id: " + document.XPathSelectElements("/n:COURSES_LIST/n:READ_ME/n:INDEX", baseNamespace).First().Value;
@@ -152,6 +153,25 @@ namespace CourseEditor
             return false;
         }
 
+        private void DisplayByIndex(int index)
+        {            
+            var baseNamespace = new XmlNamespaceManager(new NameTable());
+            baseNamespace.AddNamespace("n", "timetable.pl");
+            XNamespace ns = "timetable.pl";
+            if (index >= 1 && index <= document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").Count())
+            {
+                this.semEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index-1).Attribute("semID").Value.Substring(1);
+                this.nameEdit.Text = document.XPathSelectElements("/n:COURSES_LIST/n:COURSES/n:COURSE/n:NAME | /n:COURSES_LIST/n:COURSES/n:COURSE/n:POLISH_NAME", baseNamespace).ElementAt(index-1).Value;
+                this.idEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index - 1).Element(ns + "ID").Value;
+                this.ectsEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index - 1).Element(ns + "ECTS").Value;
+                this.lecEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index - 1).Element(ns + "LECTURE_H").Value;
+                this.tutEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index - 1).Element(ns + "TUTORIAL_H").Value;
+                this.labEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index - 1).Element(ns + "LABORATORY_H").Value;
+                this.dateEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index - 1).Element(ns + "GRADING_DATE").Value;
+            }
+            else throw new System.Exception();
+        }
+
         private void loadButton_Click(object sender, EventArgs e)
         {
             string filename = this.fileInput.Text;
@@ -200,7 +220,9 @@ namespace CourseEditor
             try
             {
                 int selectedIndex = int.Parse(this.NoEdit.Text);
-
+                DisplayByIndex(selectedIndex);
+                ClearLabels();
+                DisplayCourses();
             }catch (System.Exception ex)
             {
                 this.errorLabel.Text = "Cannot display selected course. Please make sure that such index exists.";
