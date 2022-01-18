@@ -153,21 +153,25 @@ namespace CourseEditor
             return false;
         }
 
-        private void DisplayByIndex(int index)
+        private void DisplayByIndex(int index0)
         {            
             var baseNamespace = new XmlNamespaceManager(new NameTable());
             baseNamespace.AddNamespace("n", "timetable.pl");
             XNamespace ns = "timetable.pl";
-            if (index >= 1 && index <= document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").Count())
+
+            int index = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE")
+                .Where(x => x.Attribute("nr").Value == "C" + index0.ToString()).Last().ElementsBeforeSelf().Count();
+
+            if (index >= 0 && index < document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").Count())
             {
-                this.semEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index-1).Attribute("semID").Value.Substring(1);
-                this.nameEdit.Text = document.XPathSelectElements("/n:COURSES_LIST/n:COURSES/n:COURSE/n:NAME | /n:COURSES_LIST/n:COURSES/n:COURSE/n:POLISH_NAME", baseNamespace).ElementAt(index-1).Value;
-                this.idEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index - 1).Element(ns + "ID").Value;
-                this.ectsEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index - 1).Element(ns + "ECTS").Value;
-                this.lecEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index - 1).Element(ns + "LECTURE_H").Value;
-                this.tutEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index - 1).Element(ns + "TUTORIAL_H").Value;
-                this.labEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index - 1).Element(ns + "LABORATORY_H").Value;
-                this.dateEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index - 1).Element(ns + "GRADING_DATE").Value;
+                this.semEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Attribute("semID").Value.Substring(1);
+                this.nameEdit.Text = document.XPathSelectElements("/n:COURSES_LIST/n:COURSES/n:COURSE/n:NAME | /n:COURSES_LIST/n:COURSES/n:COURSE/n:POLISH_NAME", baseNamespace).ElementAt(index).Value;
+                this.idEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "ID").Value;
+                this.ectsEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "ECTS").Value;
+                this.lecEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "LECTURE_H").Value;
+                this.tutEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "TUTORIAL_H").Value;
+                this.labEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "LABORATORY_H").Value;
+                this.dateEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "GRADING_DATE").Value;
             }
             else throw new System.Exception();
         }
