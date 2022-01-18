@@ -121,7 +121,7 @@ namespace CourseEditor
                     new XElement(ns + "GRADING_DATE", new XAttribute("graded", false), new XAttribute(ns_xsi + "nil",true)),
                     new XElement(ns + "WEIGHT", weight0)
                     ));
-                    if(!ValidateDocument(updated)) this.debugLabel.Text = "notpog";
+                    
                 }
 
         else    updated.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Add(
@@ -183,6 +183,16 @@ namespace CourseEditor
             else this.errorLabel.Text = "Cannot add course. Please make sure that entered data is valid.";
         }
 
-
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string outputName = this.fileOutput.Text;
+                document.Save(outputName);
+            }catch (System.Exception ex)
+            {
+                this.errorLabel.Text = "Cannot save this file. Please make sure it has proper extension.";         
+            }
+        }
     }
 }

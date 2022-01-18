@@ -53,6 +53,8 @@
             this.semLabel = new System.Windows.Forms.Label();
             this.errorLabel = new System.Windows.Forms.Label();
             this.debugLabel = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.fileOutput = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // authorLabel
@@ -255,17 +257,36 @@
             // debugLabel
             // 
             this.debugLabel.AutoSize = true;
-            this.debugLabel.Location = new System.Drawing.Point(1144, 65);
+            this.debugLabel.Location = new System.Drawing.Point(1100, 95);
             this.debugLabel.Name = "debugLabel";
             this.debugLabel.Size = new System.Drawing.Size(38, 15);
             this.debugLabel.TabIndex = 24;
             this.debugLabel.Text = "label1";
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(1270, 41);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.TabIndex = 25;
+            this.saveButton.Text = "Save as";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // fileOutput
+            // 
+            this.fileOutput.Location = new System.Drawing.Point(1164, 42);
+            this.fileOutput.Name = "fileOutput";
+            this.fileOutput.Size = new System.Drawing.Size(100, 23);
+            this.fileOutput.TabIndex = 26;
             // 
             // Timetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1357, 641);
+            this.Controls.Add(this.fileOutput);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.debugLabel);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.semLabel);
@@ -325,5 +346,7 @@
         private Label semLabel;
         private Label errorLabel;
         private Label debugLabel;
+        private Button saveButton;
+        private TextBox fileOutput;
     }
 }
