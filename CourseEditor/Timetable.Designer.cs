@@ -52,6 +52,7 @@
             this.semInput = new System.Windows.Forms.TextBox();
             this.semLabel = new System.Windows.Forms.Label();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.debugLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // authorLabel
@@ -251,11 +252,21 @@
             this.errorLabel.Size = new System.Drawing.Size(0, 15);
             this.errorLabel.TabIndex = 23;
             // 
+            // debugLabel
+            // 
+            this.debugLabel.AutoSize = true;
+            this.debugLabel.Location = new System.Drawing.Point(1144, 65);
+            this.debugLabel.Name = "debugLabel";
+            this.debugLabel.Size = new System.Drawing.Size(38, 15);
+            this.debugLabel.TabIndex = 24;
+            this.debugLabel.Text = "label1";
+            // 
             // Timetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1357, 641);
+            this.Controls.Add(this.debugLabel);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.semLabel);
             this.Controls.Add(this.semInput);
@@ -313,5 +324,6 @@
         private TextBox semInput;
         private Label semLabel;
         private Label errorLabel;
+        private Label debugLabel;
     }
 }

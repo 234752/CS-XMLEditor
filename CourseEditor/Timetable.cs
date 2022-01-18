@@ -104,9 +104,27 @@ namespace CourseEditor
                 XNamespace ns = "timetable.pl";
 
             
-            
+        if(date0=="")
+            {
+                    
+                    XNamespace ns_xsi = "http://www.w3.org/2001/XMLSchema-instance";
+                    updated.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Add(
+                new XElement(ns + "COURSE",
+                    new XAttribute("nr", "C" + number0),
+                    new XAttribute("semID", "S" + sem0),
+                    new XElement(ns + "NAME", name0),
+                    new XElement(ns + "ID", id0),
+                    new XElement(ns + "ECTS", ects0),
+                    new XElement(ns + "LECTURE_H", lec0),
+                    new XElement(ns + "TUTORIAL_H", tut0),
+                    new XElement(ns + "LABORATORY_H", lab0),
+                    new XElement(ns + "GRADING_DATE", new XAttribute("graded", false), new XAttribute(ns_xsi + "nil",true)),
+                    new XElement(ns + "WEIGHT", weight0)
+                    ));
+                    if(!ValidateDocument(updated)) this.debugLabel.Text = "notpog";
+                }
 
-                updated.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Add(
+        else    updated.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Add(
                 new XElement(ns + "COURSE",
                     new XAttribute("nr", "C" + number0),
                     new XAttribute("semID", "S" + sem0),

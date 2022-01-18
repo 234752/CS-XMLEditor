@@ -81,6 +81,7 @@ namespace editor
             string weight0 = w.ToString("F2");
 
             XNamespace ns = "timetable.pl";
+            XNamespace ns_xsi = "http://www.w3.org/2001/XMLSchema-instance";
 
             string n0 = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").Last().Attribute("nr").Value;
             int number0 = int.Parse(n0.Substring(1)) + 1;
@@ -95,7 +96,7 @@ namespace editor
                 new XElement(ns + "LECTURE_H", lec0),
                 new XElement(ns + "TUTORIAL_H", tut0),
                 new XElement(ns + "LABORATORY_H", lab0),
-                new XElement(ns + "GRADING_DATE", new XAttribute("graded", true), date0),
+                new XElement(ns + "GRADING_DATE", new XAttribute("graded", false), new XAttribute(ns_xsi+"nil", true)),
                 new XElement(ns + "WEIGHT", weight0)
                 ));
 
@@ -103,7 +104,7 @@ namespace editor
 
             //Console.WriteLine(document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants().ElementAt(1).Element(ns+"ID").Value);
 
-            if(!ValidateThis(document)) document.Element(ns + "COURSES_LIST").Element(ns+"COURSES").Descendants(ns + "COURSE").ElementAt(number0-1).Remove();
+            //if(!ValidateThis(document)) document.Element(ns + "COURSES_LIST").Element(ns+"COURSES").Descendants(ns + "COURSE").ElementAt(number0-1).Remove();
 
 
 
@@ -119,8 +120,8 @@ namespace editor
 
             //if (ValidateThis(courses)) Console.WriteLine("pogChamp");
             //else Console.WriteLine("notPogChamp");
-
-            AddCourse(courses);
+            if (ValidateThis(courses)) Console.WriteLine("pogpog");
+            //AddCourse(courses);
             XNamespace ns = "timetable.pl";
 
             //Console.WriteLine(courses.Element(ns+"COURSES_LIST").Element(ns+"COURSES").Descendants(ns+"COURSE").Last().Attribute("nr").Value);
