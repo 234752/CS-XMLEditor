@@ -195,6 +195,7 @@ namespace CourseEditor
 
         private void EditByIndex(int index0)
         {
+            XNamespace ns_xsi = "http://www.w3.org/2001/XMLSchema-instance";
             var baseNamespace = new XmlNamespaceManager(new NameTable());
             baseNamespace.AddNamespace("n", "timetable.pl");
             XNamespace ns = "timetable.pl";
@@ -213,6 +214,23 @@ namespace CourseEditor
                 edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "LECTURE_H").Value = this.lecEdit.Text;
                 edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "TUTORIAL_H").Value = this.tutEdit.Text;
                 edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "LABORATORY_H").Value = this.labEdit.Text;
+
+                if(edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "GRADING_DATE").Attribute("graded").Value=="true"
+                    && this.dateEdit.Text=="")
+                {
+                    edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "GRADING_DATE").Attribute("graded").Value = "false";
+                    edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "GRADING_DATE")
+                        .Add(new XAttribute(ns_xsi + "nil", true));
+                }else
+                if(edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "GRADING_DATE").Attribute("graded").Value == "false"
+                    && this.dateEdit.Text!="")
+                {
+                    edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "GRADING_DATE").Attribute("graded").Value = "true";
+                    edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "GRADING_DATE")
+                        .Attribute(ns_xsi + "nil").Remove();
+                }
+
+
                 edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "GRADING_DATE").Value = this.dateEdit.Text;
 
                 if (ValidateDocument(edited)) document = edited;
