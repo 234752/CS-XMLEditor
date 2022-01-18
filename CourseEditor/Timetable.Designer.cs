@@ -383,6 +383,7 @@
             this.deleteButton.TabIndex = 38;
             this.deleteButton.Text = "DELETE";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // NoDisplayLabel
             // 

@@ -172,6 +172,19 @@ namespace CourseEditor
             else throw new System.Exception();
         }
 
+        private void DeleteByIndex(int index)
+        {
+            XNamespace ns = "timetable.pl";
+            if (index >= 1 && index <= document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").Count())
+            {
+                XDocument deleted = new XDocument(document);
+                deleted.Element(ns +"COURSES_LIST").Element(ns +"COURSES").Descendants(ns +"COURSE").ElementAt(index-1).Remove();
+                if(ValidateDocument(deleted)) document = deleted;
+                else throw new System.Exception();
+            }
+            else throw new System.Exception();
+        }
+
         private void loadButton_Click(object sender, EventArgs e)
         {
             string filename = this.fileInput.Text;
@@ -226,6 +239,21 @@ namespace CourseEditor
             }catch (System.Exception ex)
             {
                 this.errorLabel.Text = "Cannot display selected course. Please make sure that such index exists.";
+            }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int selectedIndex = int.Parse(this.NoEdit.Text);
+                DeleteByIndex(selectedIndex);
+                ClearLabels();
+                DisplayCourses();
+            }
+            catch (System.Exception ex)
+            {
+                this.errorLabel.Text = "Cannot delete selected course. Please make sure that such index exists.";
             }
         }
     }
