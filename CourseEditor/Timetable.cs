@@ -27,6 +27,7 @@ namespace CourseEditor
             this.labLabel.Text = "LABORATORY H";
             this.dateLabel.Text = "DATE GRADED";
             this.weightLabel.Text = "WEIGHT";
+            this.errorLabel.Text = "";
         }
 
         private void DisplayCourses()
@@ -83,43 +84,51 @@ namespace CourseEditor
 
         private bool AddCourse()
         {
-            XDocument updated = new XDocument(document);
 
-            int number0 = int.Parse(this.numInput.Text);
-            string sem0 = this.semInput.Text;
-            string name0 = this.nameInput.Text;
-            string id0 = this.idInput.Text;
-            int ects0 = int.Parse(this.ectsInput.Text);
-            int lec0 = int.Parse(this.lecInput.Text);
-            int tut0 = int.Parse(this.tutInput.Text);
-            int lab0 = int.Parse(this.labInput.Text);
-            string date0 = this.dateInput.Text;
-            double w = ects0 / 30.0;
-            string weight0 = w.ToString("F2");
-
-            XNamespace ns = "timetable.pl";
-
-            //string n0 = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").Last().Attribute("nr").Value;
+            try
+            {
+                XDocument updated = new XDocument(document);
+                int number0 = int.Parse(this.numInput.Text);
+                string sem0 = this.semInput.Text;
+                string name0 = this.nameInput.Text;
+                string id0 = this.idInput.Text;
+                int ects0 = int.Parse(this.ectsInput.Text);
+                int lec0 = int.Parse(this.lecInput.Text);
+                int tut0 = int.Parse(this.tutInput.Text);
+                int lab0 = int.Parse(this.labInput.Text);
+                string date0 = this.dateInput.Text;
+                double w = ects0 / 30.0;
+                string weight0 = w.ToString("F2");
             
 
-            updated.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Add(
-            new XElement(ns + "COURSE",
-                new XAttribute("nr", "C" + number0),
-                new XAttribute("semID", "S" + sem0),
-                new XElement(ns + "NAME", name0),
-                new XElement(ns + "ID", id0),
-                new XElement(ns + "ECTS", ects0),
-                new XElement(ns + "LECTURE_H", lec0),
-                new XElement(ns + "TUTORIAL_H", tut0),
-                new XElement(ns + "LABORATORY_H", lab0),
-                new XElement(ns + "GRADING_DATE", new XAttribute("graded", true), date0),
-                new XElement(ns + "WEIGHT", weight0)
-                ));
+                XNamespace ns = "timetable.pl";
+
+            
+            
+
+                updated.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Add(
+                new XElement(ns + "COURSE",
+                    new XAttribute("nr", "C" + number0),
+                    new XAttribute("semID", "S" + sem0),
+                    new XElement(ns + "NAME", name0),
+                    new XElement(ns + "ID", id0),
+                    new XElement(ns + "ECTS", ects0),
+                    new XElement(ns + "LECTURE_H", lec0),
+                    new XElement(ns + "TUTORIAL_H", tut0),
+                    new XElement(ns + "LABORATORY_H", lab0),
+                    new XElement(ns + "GRADING_DATE", new XAttribute("graded", true), date0),
+                    new XElement(ns + "WEIGHT", weight0)
+                    ));
 
             if (ValidateDocument(updated))
             {
                 document = updated;
                 return true;
+            }
+            }
+            catch (System.Exception ex)
+            {
+                return false;
             }
 
             return false;
@@ -128,13 +137,22 @@ namespace CourseEditor
         private void loadButton_Click(object sender, EventArgs e)
         {
             string filename = this.fileInput.Text;
-            document = XDocument.Load(filename);
-
-            if (ValidateDocument(document))
+            try
             {
-                ClearLabels();
-                DisplayCourses();
+                document = XDocument.Load(filename);
+                if (ValidateDocument(document))
+                {
+                    ClearLabels();
+                    DisplayCourses();
+                }
+                else this.errorLabel.Text = "Cannot validate this document. Please make sure that it is validated XML document.";
             }
+            catch (System.Exception ex)
+            {
+                this.errorLabel.Text = "Cannot load this document. Please make sure that entered name is proper.";
+            }
+
+            
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -144,7 +162,7 @@ namespace CourseEditor
                 ClearLabels();
                 DisplayCourses();
             }
-            
+            else this.errorLabel.Text = "Cannot add course. Please make sure that entered data is valid.";
         }
 
 
