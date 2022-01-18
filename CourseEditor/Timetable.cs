@@ -194,5 +194,17 @@ namespace CourseEditor
                 this.errorLabel.Text = "Cannot save this file. Please make sure it has proper extension.";         
             }
         }
+
+        private void showButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int selectedIndex = int.Parse(this.NoEdit.Text);
+
+            }catch (System.Exception ex)
+            {
+                this.errorLabel.Text = "Cannot display selected course. Please make sure that such index exists.";
+            }
+        }
     }
 }

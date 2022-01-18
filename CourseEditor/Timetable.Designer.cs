@@ -308,6 +308,7 @@
             this.showButton.TabIndex = 35;
             this.showButton.Text = "DISPLAY";
             this.showButton.UseVisualStyleBackColor = true;
+            this.showButton.Click += new System.EventHandler(this.showButton_Click);
             // 
             // dateEdit
             // 
