@@ -193,6 +193,35 @@ namespace CourseEditor
             else throw new System.Exception();
         }
 
+        private void EditByIndex(int index0)
+        {
+            var baseNamespace = new XmlNamespaceManager(new NameTable());
+            baseNamespace.AddNamespace("n", "timetable.pl");
+            XNamespace ns = "timetable.pl";
+
+            int index = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE")
+                    .Where(x => x.Attribute("nr").Value == "C" + index0.ToString()).Last().ElementsBeforeSelf().Count();
+
+            XDocument edited = new XDocument(document);
+
+            if (index >= 0 && index < document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").Count())
+            {
+                edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Attribute("semID").Value = "S" + this.semEdit.Text.ToString();
+                edited.XPathSelectElements("/n:COURSES_LIST/n:COURSES/n:COURSE/n:NAME | /n:COURSES_LIST/n:COURSES/n:COURSE/n:POLISH_NAME", baseNamespace).ElementAt(index).Value = this.nameEdit.Text;
+                edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "ID").Value = this.idEdit.Text;
+                edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "ECTS").Value = this.ectsEdit.Text;
+                edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "LECTURE_H").Value = this.lecEdit.Text;
+                edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "TUTORIAL_H").Value = this.tutEdit.Text;
+                edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "LABORATORY_H").Value = this.labEdit.Text;
+                edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "GRADING_DATE").Value = this.dateEdit.Text;
+
+                if (ValidateDocument(edited)) document = edited;
+                else throw new System.Exception();
+            }
+            else throw new System.Exception();
+
+        }
+
         private void loadButton_Click(object sender, EventArgs e)
         {
             string filename = this.fileInput.Text;
@@ -261,7 +290,22 @@ namespace CourseEditor
             }
             catch (System.Exception ex)
             {
-                this.errorLabel.Text = "Cannot delete selected course. Please make sure that such index exists.";
+                this.errorLabel.Text = "Cannot delete selected course. Please make sure that such index exists and that document will be valid after deletion.";
+            }
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int selectedIndex = int.Parse(this.NoEdit.Text);
+                EditByIndex(selectedIndex);
+                ClearLabels();
+                DisplayCourses();
+            }
+            catch (System.Exception ex)
+            {
+                this.errorLabel.Text = "Cannot edit selected course. Please make sure that such index exists and entered data is valid.";
             }
         }
     }

@@ -262,7 +262,7 @@
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(703, 15);
+            this.errorLabel.Location = new System.Drawing.Point(510, 12);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(0, 15);
             this.errorLabel.TabIndex = 23;
@@ -374,6 +374,7 @@
             this.editButton.TabIndex = 37;
             this.editButton.Text = "EDIT";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // deleteButton
             // 
