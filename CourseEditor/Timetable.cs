@@ -66,14 +66,14 @@ namespace CourseEditor
             }
         }
 
-        private bool ValidateDocument()
+        private bool ValidateDocument(XDocument target)
         {
             XmlSchemaSet schemas = new XmlSchemaSet();
             schemas.Add(null, "format.xsd");
             schemas.Add(null, "types.xsd");
 
 
-            try { document.Validate(schemas, null); }
+            try { target.Validate(schemas, null); }
             catch (XmlSchemaException xsd)
             {
                 return false;
@@ -83,6 +83,9 @@ namespace CourseEditor
 
         private bool AddCourse()
         {
+            XDocument updated = new XDocument(document);
+
+            int number0 = int.Parse(this.numInput.Text);
             string sem0 = this.semInput.Text;
             string name0 = this.nameInput.Text;
             string id0 = this.idInput.Text;
@@ -96,10 +99,10 @@ namespace CourseEditor
 
             XNamespace ns = "timetable.pl";
 
-            string n0 = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").Last().Attribute("nr").Value;
-            int number0 = int.Parse(n0.Substring(1)) + 1;
+            //string n0 = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").Last().Attribute("nr").Value;
+            
 
-            document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Add(
+            updated.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Add(
             new XElement(ns + "COURSE",
                 new XAttribute("nr", "C" + number0),
                 new XAttribute("semID", "S" + sem0),
@@ -113,15 +116,13 @@ namespace CourseEditor
                 new XElement(ns + "WEIGHT", weight0)
                 ));
 
-            
+            if (ValidateDocument(updated))
+            {
+                document = updated;
+                return true;
+            }
 
-
-
-            if (!ValidateDocument()) document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(number0 - 1).Remove();
-
-            
-
-            return false;                                               //DELETE THIS LATER
+            return false;
         }
 
         private void loadButton_Click(object sender, EventArgs e)
@@ -129,7 +130,7 @@ namespace CourseEditor
             string filename = this.fileInput.Text;
             document = XDocument.Load(filename);
 
-            if (ValidateDocument())
+            if (ValidateDocument(document))
             {
                 ClearLabels();
                 DisplayCourses();
@@ -138,9 +139,12 @@ namespace CourseEditor
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            AddCourse();
-            ClearLabels();
-            DisplayCourses();
+            if (AddCourse())
+            {
+                ClearLabels();
+                DisplayCourses();
+            }
+            
         }
 
 
