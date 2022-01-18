@@ -172,13 +172,17 @@ namespace CourseEditor
             else throw new System.Exception();
         }
 
-        private void DeleteByIndex(int index)
+        private void DeleteByIndex(int index0)
         {
             XNamespace ns = "timetable.pl";
-            if (index >= 1 && index <= document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").Count())
+
+        int index = document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE")
+                .Where(x => x.Attribute("nr").Value == "C" + index0.ToString()).Last().ElementsBeforeSelf().Count();
+
+            if (index >= 0 && index < document.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").Count())
             {
                 XDocument deleted = new XDocument(document);
-                deleted.Element(ns +"COURSES_LIST").Element(ns +"COURSES").Descendants(ns +"COURSE").ElementAt(index-1).Remove();
+                deleted.Element(ns +"COURSES_LIST").Element(ns +"COURSES").Descendants(ns +"COURSE").ElementAt(index).Remove();
                 if(ValidateDocument(deleted)) document = deleted;
                 else throw new System.Exception();
             }
