@@ -55,6 +55,19 @@
             this.debugLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.fileOutput = new System.Windows.Forms.TextBox();
+            this.semEdit = new System.Windows.Forms.TextBox();
+            this.showButton = new System.Windows.Forms.Button();
+            this.dateEdit = new System.Windows.Forms.TextBox();
+            this.labEdit = new System.Windows.Forms.TextBox();
+            this.tutEdit = new System.Windows.Forms.TextBox();
+            this.lecEdit = new System.Windows.Forms.TextBox();
+            this.ectsEdit = new System.Windows.Forms.TextBox();
+            this.idEdit = new System.Windows.Forms.TextBox();
+            this.nameEdit = new System.Windows.Forms.TextBox();
+            this.NoEdit = new System.Windows.Forms.TextBox();
+            this.editButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.NoDisplayLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // authorLabel
@@ -224,7 +237,7 @@
             // 
             this.addButton.Location = new System.Drawing.Point(888, 127);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(50, 23);
+            this.addButton.Size = new System.Drawing.Size(63, 23);
             this.addButton.TabIndex = 20;
             this.addButton.Text = "ADD";
             this.addButton.UseVisualStyleBackColor = true;
@@ -280,11 +293,123 @@
             this.fileOutput.Size = new System.Drawing.Size(100, 23);
             this.fileOutput.TabIndex = 26;
             // 
+            // semEdit
+            // 
+            this.semEdit.Location = new System.Drawing.Point(54, 91);
+            this.semEdit.Name = "semEdit";
+            this.semEdit.Size = new System.Drawing.Size(61, 23);
+            this.semEdit.TabIndex = 36;
+            // 
+            // showButton
+            // 
+            this.showButton.Location = new System.Drawing.Point(957, 57);
+            this.showButton.Name = "showButton";
+            this.showButton.Size = new System.Drawing.Size(63, 23);
+            this.showButton.TabIndex = 35;
+            this.showButton.Text = "DISPLAY";
+            this.showButton.UseVisualStyleBackColor = true;
+            // 
+            // dateEdit
+            // 
+            this.dateEdit.Location = new System.Drawing.Point(800, 91);
+            this.dateEdit.Name = "dateEdit";
+            this.dateEdit.Size = new System.Drawing.Size(82, 23);
+            this.dateEdit.TabIndex = 34;
+            // 
+            // labEdit
+            // 
+            this.labEdit.Location = new System.Drawing.Point(703, 91);
+            this.labEdit.Name = "labEdit";
+            this.labEdit.Size = new System.Drawing.Size(91, 23);
+            this.labEdit.TabIndex = 33;
+            // 
+            // tutEdit
+            // 
+            this.tutEdit.Location = new System.Drawing.Point(626, 91);
+            this.tutEdit.Name = "tutEdit";
+            this.tutEdit.Size = new System.Drawing.Size(71, 23);
+            this.tutEdit.TabIndex = 32;
+            // 
+            // lecEdit
+            // 
+            this.lecEdit.Location = new System.Drawing.Point(554, 91);
+            this.lecEdit.Name = "lecEdit";
+            this.lecEdit.Size = new System.Drawing.Size(66, 23);
+            this.lecEdit.TabIndex = 31;
+            // 
+            // ectsEdit
+            // 
+            this.ectsEdit.Location = new System.Drawing.Point(515, 91);
+            this.ectsEdit.Name = "ectsEdit";
+            this.ectsEdit.Size = new System.Drawing.Size(33, 23);
+            this.ectsEdit.TabIndex = 30;
+            // 
+            // idEdit
+            // 
+            this.idEdit.Location = new System.Drawing.Point(435, 91);
+            this.idEdit.Name = "idEdit";
+            this.idEdit.Size = new System.Drawing.Size(75, 23);
+            this.idEdit.TabIndex = 29;
+            // 
+            // nameEdit
+            // 
+            this.nameEdit.Location = new System.Drawing.Point(121, 91);
+            this.nameEdit.Name = "nameEdit";
+            this.nameEdit.Size = new System.Drawing.Size(308, 23);
+            this.nameEdit.TabIndex = 28;
+            // 
+            // NoEdit
+            // 
+            this.NoEdit.Location = new System.Drawing.Point(920, 58);
+            this.NoEdit.Name = "NoEdit";
+            this.NoEdit.Size = new System.Drawing.Size(23, 23);
+            this.NoEdit.TabIndex = 27;
+            // 
+            // editButton
+            // 
+            this.editButton.Location = new System.Drawing.Point(888, 90);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(63, 23);
+            this.editButton.TabIndex = 37;
+            this.editButton.Text = "EDIT";
+            this.editButton.UseVisualStyleBackColor = true;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(957, 90);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(63, 23);
+            this.deleteButton.TabIndex = 38;
+            this.deleteButton.Text = "DELETE";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            // 
+            // NoDisplayLabel
+            // 
+            this.NoDisplayLabel.AutoSize = true;
+            this.NoDisplayLabel.Location = new System.Drawing.Point(888, 61);
+            this.NoDisplayLabel.Name = "NoDisplayLabel";
+            this.NoDisplayLabel.Size = new System.Drawing.Size(26, 15);
+            this.NoDisplayLabel.TabIndex = 39;
+            this.NoDisplayLabel.Text = "No:";
+            // 
             // Timetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1357, 641);
+            this.Controls.Add(this.NoDisplayLabel);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.editButton);
+            this.Controls.Add(this.semEdit);
+            this.Controls.Add(this.showButton);
+            this.Controls.Add(this.dateEdit);
+            this.Controls.Add(this.labEdit);
+            this.Controls.Add(this.tutEdit);
+            this.Controls.Add(this.lecEdit);
+            this.Controls.Add(this.ectsEdit);
+            this.Controls.Add(this.idEdit);
+            this.Controls.Add(this.nameEdit);
+            this.Controls.Add(this.NoEdit);
             this.Controls.Add(this.fileOutput);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.debugLabel);
@@ -348,5 +473,18 @@
         private Label debugLabel;
         private Button saveButton;
         private TextBox fileOutput;
+        private TextBox semEdit;
+        private Button showButton;
+        private TextBox dateEdit;
+        private TextBox labEdit;
+        private TextBox tutEdit;
+        private TextBox lecEdit;
+        private TextBox ectsEdit;
+        private TextBox idEdit;
+        private TextBox nameEdit;
+        private TextBox NoEdit;
+        private Button editButton;
+        private Button deleteButton;
+        private Label NoDisplayLabel;
     }
 }
