@@ -30,6 +30,13 @@ namespace CourseEditor
             this.weightLabel.Text = "";
             this.errorLabel.Text = "";
         }
+        private void ClearSEMLabels()
+        {
+            this.SEMnumLabel.Text = "";
+            this.SEMnameLabel.Text = "";
+            this.SEMdateLabel.Text = "";
+            this.SEMhourLabel.Text = "";
+        }
 
         private void DisplayCourses()
         {
@@ -65,6 +72,27 @@ namespace CourseEditor
                 
                 i++;
                 
+            }
+        }
+        private void DisplaySemesters()
+        {
+            
+            XNamespace ns = "timetable.pl";
+
+
+            int i = 0;
+            foreach (XElement el in document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER"))
+            {
+                this.SEMnumLabel.Text += "\n" + document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(i).Attribute("semID").Value.Substring(1);
+
+                this.SEMnameLabel.Text += "\n" + document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(i).Element(ns+"S_NAME").Value;
+
+                this.SEMdateLabel.Text += "\n" + document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(i).Element(ns + "END_DATE").Value;
+
+                this.SEMhourLabel.Text += "\n" + document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(i).Element(ns + "END_HOUR").Value;
+
+                i++;
+
             }
         }
 
@@ -252,6 +280,8 @@ namespace CourseEditor
                 if (ValidateDocument(document))
                 {
                     ClearLabels();
+                    ClearSEMLabels();
+                    DisplaySemesters();
                     DisplayCourses();
                 }
                 else this.errorLabel.Text = "Cannot validate this document. Please make sure that it is validated XML document.";
