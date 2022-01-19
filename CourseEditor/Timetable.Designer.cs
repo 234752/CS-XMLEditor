@@ -68,6 +68,8 @@
             this.editButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.NoDisplayLabel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // authorLabel
@@ -82,7 +84,7 @@
             // numLabel
             // 
             this.numLabel.AutoSize = true;
-            this.numLabel.Location = new System.Drawing.Point(18, 165);
+            this.numLabel.Location = new System.Drawing.Point(6, 13);
             this.numLabel.Name = "numLabel";
             this.numLabel.Size = new System.Drawing.Size(23, 15);
             this.numLabel.TabIndex = 1;
@@ -91,7 +93,7 @@
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(121, 165);
+            this.nameLabel.Location = new System.Drawing.Point(109, 13);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(41, 15);
             this.nameLabel.TabIndex = 2;
@@ -100,7 +102,7 @@
             // idLabel
             // 
             this.idLabel.AutoSize = true;
-            this.idLabel.Location = new System.Drawing.Point(435, 165);
+            this.idLabel.Location = new System.Drawing.Point(423, 13);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(18, 15);
             this.idLabel.TabIndex = 3;
@@ -109,7 +111,7 @@
             // ectsLabel
             // 
             this.ectsLabel.AutoSize = true;
-            this.ectsLabel.Location = new System.Drawing.Point(515, 165);
+            this.ectsLabel.Location = new System.Drawing.Point(503, 13);
             this.ectsLabel.Name = "ectsLabel";
             this.ectsLabel.Size = new System.Drawing.Size(33, 15);
             this.ectsLabel.TabIndex = 4;
@@ -118,7 +120,7 @@
             // lecLabel
             // 
             this.lecLabel.AutoSize = true;
-            this.lecLabel.Location = new System.Drawing.Point(554, 165);
+            this.lecLabel.Location = new System.Drawing.Point(542, 13);
             this.lecLabel.Name = "lecLabel";
             this.lecLabel.Size = new System.Drawing.Size(66, 15);
             this.lecLabel.TabIndex = 5;
@@ -127,7 +129,7 @@
             // tutLabel
             // 
             this.tutLabel.AutoSize = true;
-            this.tutLabel.Location = new System.Drawing.Point(626, 165);
+            this.tutLabel.Location = new System.Drawing.Point(614, 13);
             this.tutLabel.Name = "tutLabel";
             this.tutLabel.Size = new System.Drawing.Size(71, 15);
             this.tutLabel.TabIndex = 6;
@@ -136,7 +138,7 @@
             // labLabel
             // 
             this.labLabel.AutoSize = true;
-            this.labLabel.Location = new System.Drawing.Point(703, 165);
+            this.labLabel.Location = new System.Drawing.Point(691, 13);
             this.labLabel.Name = "labLabel";
             this.labLabel.Size = new System.Drawing.Size(91, 15);
             this.labLabel.TabIndex = 7;
@@ -145,7 +147,7 @@
             // dateLabel
             // 
             this.dateLabel.AutoSize = true;
-            this.dateLabel.Location = new System.Drawing.Point(800, 165);
+            this.dateLabel.Location = new System.Drawing.Point(788, 13);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(82, 15);
             this.dateLabel.TabIndex = 8;
@@ -154,7 +156,7 @@
             // weightLabel
             // 
             this.weightLabel.AutoSize = true;
-            this.weightLabel.Location = new System.Drawing.Point(888, 165);
+            this.weightLabel.Location = new System.Drawing.Point(876, 13);
             this.weightLabel.Name = "weightLabel";
             this.weightLabel.Size = new System.Drawing.Size(50, 15);
             this.weightLabel.TabIndex = 9;
@@ -253,7 +255,7 @@
             // semLabel
             // 
             this.semLabel.AutoSize = true;
-            this.semLabel.Location = new System.Drawing.Point(54, 165);
+            this.semLabel.Location = new System.Drawing.Point(42, 13);
             this.semLabel.Name = "semLabel";
             this.semLabel.Size = new System.Drawing.Size(61, 15);
             this.semLabel.TabIndex = 22;
@@ -262,11 +264,11 @@
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
+            this.errorLabel.ForeColor = System.Drawing.Color.Red;
             this.errorLabel.Location = new System.Drawing.Point(510, 12);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(0, 15);
             this.errorLabel.TabIndex = 23;
-            this.errorLabel.ForeColor = System.Drawing.Color.Red;
             // 
             // debugLabel
             // 
@@ -396,11 +398,30 @@
             this.NoDisplayLabel.TabIndex = 39;
             this.NoDisplayLabel.Text = "No:";
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.numLabel);
+            this.panel1.Controls.Add(this.nameLabel);
+            this.panel1.Controls.Add(this.idLabel);
+            this.panel1.Controls.Add(this.ectsLabel);
+            this.panel1.Controls.Add(this.lecLabel);
+            this.panel1.Controls.Add(this.tutLabel);
+            this.panel1.Controls.Add(this.labLabel);
+            this.panel1.Controls.Add(this.dateLabel);
+            this.panel1.Controls.Add(this.weightLabel);
+            this.panel1.Controls.Add(this.semLabel);
+            this.panel1.Location = new System.Drawing.Point(12, 156);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1008, 473);
+            this.panel1.TabIndex = 40;
+            // 
             // Timetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1357, 641);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.NoDisplayLabel);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.editButton);
@@ -418,7 +439,6 @@
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.debugLabel);
             this.Controls.Add(this.errorLabel);
-            this.Controls.Add(this.semLabel);
             this.Controls.Add(this.semInput);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.dateInput);
@@ -431,18 +451,11 @@
             this.Controls.Add(this.numInput);
             this.Controls.Add(this.fileInput);
             this.Controls.Add(this.loadButton);
-            this.Controls.Add(this.weightLabel);
-            this.Controls.Add(this.dateLabel);
-            this.Controls.Add(this.labLabel);
-            this.Controls.Add(this.tutLabel);
-            this.Controls.Add(this.lecLabel);
-            this.Controls.Add(this.ectsLabel);
-            this.Controls.Add(this.idLabel);
-            this.Controls.Add(this.nameLabel);
-            this.Controls.Add(this.numLabel);
             this.Controls.Add(this.authorLabel);
             this.Name = "Timetable";
             this.Text = "TIMETABLE";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -490,5 +503,6 @@
         private Button editButton;
         private Button deleteButton;
         private Label NoDisplayLabel;
+        private Panel panel1;
     }
 }
