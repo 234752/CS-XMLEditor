@@ -79,6 +79,23 @@
             this.dateInfoLabel = new System.Windows.Forms.Label();
             this.weightInfoLabel = new System.Windows.Forms.Label();
             this.semInfoLabel = new System.Windows.Forms.Label();
+            this.SEMnumInfoLabel = new System.Windows.Forms.Label();
+            this.SEMnameInfoLabel = new System.Windows.Forms.Label();
+            this.SEMdateInfoLabel = new System.Windows.Forms.Label();
+            this.SEMhourInfoLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.SEMdeleteButton = new System.Windows.Forms.Button();
+            this.SEMeditButton = new System.Windows.Forms.Button();
+            this.SEMdisplayButton = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.SEMaddButton = new System.Windows.Forms.Button();
+            this.SEMhourInput = new System.Windows.Forms.TextBox();
+            this.SEMdateInput = new System.Windows.Forms.TextBox();
+            this.SEMnameInput = new System.Windows.Forms.TextBox();
+            this.SEMnumInput = new System.Windows.Forms.TextBox();
             this.coursesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,7 +182,7 @@
             // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(1270, 12);
+            this.loadButton.Location = new System.Drawing.Point(1317, 9);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(75, 23);
             this.loadButton.TabIndex = 10;
@@ -175,7 +192,7 @@
             // 
             // fileInput
             // 
-            this.fileInput.Location = new System.Drawing.Point(1164, 12);
+            this.fileInput.Location = new System.Drawing.Point(1211, 9);
             this.fileInput.Name = "fileInput";
             this.fileInput.Size = new System.Drawing.Size(100, 23);
             this.fileInput.TabIndex = 11;
@@ -273,7 +290,7 @@
             // debugLabel
             // 
             this.debugLabel.AutoSize = true;
-            this.debugLabel.Location = new System.Drawing.Point(1100, 95);
+            this.debugLabel.Location = new System.Drawing.Point(169, 29);
             this.debugLabel.Name = "debugLabel";
             this.debugLabel.Size = new System.Drawing.Size(38, 15);
             this.debugLabel.TabIndex = 24;
@@ -281,7 +298,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(1270, 41);
+            this.saveButton.Location = new System.Drawing.Point(1317, 38);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 25;
@@ -291,7 +308,7 @@
             // 
             // fileOutput
             // 
-            this.fileOutput.Location = new System.Drawing.Point(1164, 42);
+            this.fileOutput.Location = new System.Drawing.Point(1211, 39);
             this.fileOutput.Name = "fileOutput";
             this.fileOutput.Size = new System.Drawing.Size(100, 23);
             this.fileOutput.TabIndex = 26;
@@ -506,11 +523,165 @@
             this.semInfoLabel.TabIndex = 50;
             this.semInfoLabel.Text = "SEMESTER";
             // 
+            // SEMnumInfoLabel
+            // 
+            this.SEMnumInfoLabel.AutoSize = true;
+            this.SEMnumInfoLabel.Location = new System.Drawing.Point(1085, 261);
+            this.SEMnumInfoLabel.Name = "SEMnumInfoLabel";
+            this.SEMnumInfoLabel.Size = new System.Drawing.Size(23, 15);
+            this.SEMnumInfoLabel.TabIndex = 65;
+            this.SEMnumInfoLabel.Text = "No";
+            // 
+            // SEMnameInfoLabel
+            // 
+            this.SEMnameInfoLabel.AutoSize = true;
+            this.SEMnameInfoLabel.Location = new System.Drawing.Point(1115, 261);
+            this.SEMnameInfoLabel.Name = "SEMnameInfoLabel";
+            this.SEMnameInfoLabel.Size = new System.Drawing.Size(41, 15);
+            this.SEMnameInfoLabel.TabIndex = 66;
+            this.SEMnameInfoLabel.Text = "NAME";
+            // 
+            // SEMdateInfoLabel
+            // 
+            this.SEMdateInfoLabel.AutoSize = true;
+            this.SEMdateInfoLabel.Location = new System.Drawing.Point(1192, 261);
+            this.SEMdateInfoLabel.Name = "SEMdateInfoLabel";
+            this.SEMdateInfoLabel.Size = new System.Drawing.Size(34, 15);
+            this.SEMdateInfoLabel.TabIndex = 67;
+            this.SEMdateInfoLabel.Text = "DATE";
+            // 
+            // SEMhourInfoLabel
+            // 
+            this.SEMhourInfoLabel.AutoSize = true;
+            this.SEMhourInfoLabel.Location = new System.Drawing.Point(1289, 261);
+            this.SEMhourInfoLabel.Name = "SEMhourInfoLabel";
+            this.SEMhourInfoLabel.Size = new System.Drawing.Size(40, 15);
+            this.SEMhourInfoLabel.TabIndex = 68;
+            this.SEMhourInfoLabel.Text = "HOUR";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1377, 155);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 15);
+            this.label6.TabIndex = 64;
+            this.label6.Text = "No:";
+            // 
+            // SEMdeleteButton
+            // 
+            this.SEMdeleteButton.Location = new System.Drawing.Point(1446, 184);
+            this.SEMdeleteButton.Name = "SEMdeleteButton";
+            this.SEMdeleteButton.Size = new System.Drawing.Size(63, 23);
+            this.SEMdeleteButton.TabIndex = 63;
+            this.SEMdeleteButton.Text = "DELETE";
+            this.SEMdeleteButton.UseVisualStyleBackColor = true;
+            // 
+            // SEMeditButton
+            // 
+            this.SEMeditButton.Location = new System.Drawing.Point(1377, 184);
+            this.SEMeditButton.Name = "SEMeditButton";
+            this.SEMeditButton.Size = new System.Drawing.Size(63, 23);
+            this.SEMeditButton.TabIndex = 62;
+            this.SEMeditButton.Text = "EDIT";
+            this.SEMeditButton.UseVisualStyleBackColor = true;
+            // 
+            // SEMdisplayButton
+            // 
+            this.SEMdisplayButton.Location = new System.Drawing.Point(1446, 151);
+            this.SEMdisplayButton.Name = "SEMdisplayButton";
+            this.SEMdisplayButton.Size = new System.Drawing.Size(63, 23);
+            this.SEMdisplayButton.TabIndex = 61;
+            this.SEMdisplayButton.Text = "DISPLAY";
+            this.SEMdisplayButton.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1289, 185);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(82, 23);
+            this.textBox1.TabIndex = 60;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(1192, 185);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(91, 23);
+            this.textBox2.TabIndex = 59;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(1115, 185);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(71, 23);
+            this.textBox3.TabIndex = 58;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(1409, 152);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(23, 23);
+            this.textBox5.TabIndex = 56;
+            // 
+            // SEMaddButton
+            // 
+            this.SEMaddButton.Location = new System.Drawing.Point(1377, 221);
+            this.SEMaddButton.Name = "SEMaddButton";
+            this.SEMaddButton.Size = new System.Drawing.Size(63, 23);
+            this.SEMaddButton.TabIndex = 55;
+            this.SEMaddButton.Text = "ADD";
+            this.SEMaddButton.UseVisualStyleBackColor = true;
+            // 
+            // SEMhourInput
+            // 
+            this.SEMhourInput.Location = new System.Drawing.Point(1289, 221);
+            this.SEMhourInput.Name = "SEMhourInput";
+            this.SEMhourInput.Size = new System.Drawing.Size(82, 23);
+            this.SEMhourInput.TabIndex = 54;
+            // 
+            // SEMdateInput
+            // 
+            this.SEMdateInput.Location = new System.Drawing.Point(1192, 221);
+            this.SEMdateInput.Name = "SEMdateInput";
+            this.SEMdateInput.Size = new System.Drawing.Size(91, 23);
+            this.SEMdateInput.TabIndex = 53;
+            // 
+            // SEMnameInput
+            // 
+            this.SEMnameInput.Location = new System.Drawing.Point(1115, 221);
+            this.SEMnameInput.Name = "SEMnameInput";
+            this.SEMnameInput.Size = new System.Drawing.Size(71, 23);
+            this.SEMnameInput.TabIndex = 52;
+            // 
+            // SEMnumInput
+            // 
+            this.SEMnumInput.Location = new System.Drawing.Point(1085, 221);
+            this.SEMnumInput.Name = "SEMnumInput";
+            this.SEMnumInput.Size = new System.Drawing.Size(24, 23);
+            this.SEMnumInput.TabIndex = 51;
+            // 
             // Timetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1357, 641);
+            this.ClientSize = new System.Drawing.Size(1524, 641);
+            this.Controls.Add(this.SEMnumInfoLabel);
+            this.Controls.Add(this.SEMnameInfoLabel);
+            this.Controls.Add(this.SEMdateInfoLabel);
+            this.Controls.Add(this.SEMhourInfoLabel);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.SEMdeleteButton);
+            this.Controls.Add(this.SEMeditButton);
+            this.Controls.Add(this.SEMdisplayButton);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.SEMaddButton);
+            this.Controls.Add(this.SEMhourInput);
+            this.Controls.Add(this.SEMdateInput);
+            this.Controls.Add(this.SEMnameInput);
+            this.Controls.Add(this.SEMnumInput);
             this.Controls.Add(this.numInfoLabel);
             this.Controls.Add(this.nameInfoLabel);
             this.Controls.Add(this.idInfoLabel);
@@ -614,5 +785,22 @@
         private Label dateInfoLabel;
         private Label weightInfoLabel;
         private Label semInfoLabel;
+        private Label SEMnumInfoLabel;
+        private Label SEMnameInfoLabel;
+        private Label SEMdateInfoLabel;
+        private Label SEMhourInfoLabel;
+        private Label label6;
+        private Button SEMdeleteButton;
+        private Button SEMeditButton;
+        private Button SEMdisplayButton;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private TextBox textBox5;
+        private Button SEMaddButton;
+        private TextBox SEMhourInput;
+        private TextBox SEMdateInput;
+        private TextBox SEMnameInput;
+        private TextBox SEMnumInput;
     }
 }
