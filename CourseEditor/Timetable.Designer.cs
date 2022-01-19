@@ -97,10 +97,12 @@
             this.SEMnameInput = new System.Windows.Forms.TextBox();
             this.SEMnumInput = new System.Windows.Forms.TextBox();
             this.semestersPanel = new System.Windows.Forms.Panel();
+            this.SEMyearLabel = new System.Windows.Forms.Label();
             this.SEMnumLabel = new System.Windows.Forms.Label();
+            this.SEMhourLabel = new System.Windows.Forms.Label();
             this.SEMnameLabel = new System.Windows.Forms.Label();
             this.SEMdateLabel = new System.Windows.Forms.Label();
-            this.SEMhourLabel = new System.Windows.Forms.Label();
+            this.SEMyearInfoLabel = new System.Windows.Forms.Label();
             this.coursesPanel.SuspendLayout();
             this.semestersPanel.SuspendLayout();
             this.SuspendLayout();
@@ -668,57 +670,72 @@
             // 
             // semestersPanel
             // 
+            this.semestersPanel.AutoScroll = true;
+            this.semestersPanel.Controls.Add(this.SEMyearLabel);
             this.semestersPanel.Controls.Add(this.SEMnumLabel);
             this.semestersPanel.Controls.Add(this.SEMhourLabel);
             this.semestersPanel.Controls.Add(this.SEMnameLabel);
             this.semestersPanel.Controls.Add(this.SEMdateLabel);
             this.semestersPanel.Location = new System.Drawing.Point(1058, 279);
             this.semestersPanel.Name = "semestersPanel";
-            this.semestersPanel.Size = new System.Drawing.Size(313, 239);
+            this.semestersPanel.Size = new System.Drawing.Size(382, 239);
             this.semestersPanel.TabIndex = 69;
-            this.semestersPanel.AutoScroll = true;
+            // 
+            // SEMyearLabel
+            // 
+            this.SEMyearLabel.AutoSize = true;
+            this.SEMyearLabel.Location = new System.Drawing.Point(319, 0);
+            this.SEMyearLabel.Name = "SEMyearLabel";
+            this.SEMyearLabel.Size = new System.Drawing.Size(0, 15);
+            this.SEMyearLabel.TabIndex = 75;
             // 
             // SEMnumLabel
             // 
             this.SEMnumLabel.AutoSize = true;
             this.SEMnumLabel.Location = new System.Drawing.Point(0, 0);
             this.SEMnumLabel.Name = "SEMnumLabel";
-            this.SEMnumLabel.Size = new System.Drawing.Size(23, 15);
+            this.SEMnumLabel.Size = new System.Drawing.Size(0, 15);
             this.SEMnumLabel.TabIndex = 70;
-            this.SEMnumLabel.Text = "No";
-            // 
-            // SEMnameLabel
-            // 
-            this.SEMnameLabel.AutoSize = true;
-            this.SEMnameLabel.Location = new System.Drawing.Point(29, 0);
-            this.SEMnameLabel.Name = "SEMnameLabel";
-            this.SEMnameLabel.Size = new System.Drawing.Size(41, 15);
-            this.SEMnameLabel.TabIndex = 71;
-            this.SEMnameLabel.Text = "NAME";
-            // 
-            // SEMdateLabel
-            // 
-            this.SEMdateLabel.AutoSize = true;
-            this.SEMdateLabel.Location = new System.Drawing.Point(143, 0);
-            this.SEMdateLabel.Name = "SEMdateLabel";
-            this.SEMdateLabel.Size = new System.Drawing.Size(60, 15);
-            this.SEMdateLabel.TabIndex = 72;
-            this.SEMdateLabel.Text = "END DATE";
             // 
             // SEMhourLabel
             // 
             this.SEMhourLabel.AutoSize = true;
             this.SEMhourLabel.Location = new System.Drawing.Point(231, 0);
             this.SEMhourLabel.Name = "SEMhourLabel";
-            this.SEMhourLabel.Size = new System.Drawing.Size(66, 15);
+            this.SEMhourLabel.Size = new System.Drawing.Size(0, 15);
             this.SEMhourLabel.TabIndex = 73;
-            this.SEMhourLabel.Text = "END HOUR";
+            // 
+            // SEMnameLabel
+            // 
+            this.SEMnameLabel.AutoSize = true;
+            this.SEMnameLabel.Location = new System.Drawing.Point(29, 0);
+            this.SEMnameLabel.Name = "SEMnameLabel";
+            this.SEMnameLabel.Size = new System.Drawing.Size(0, 15);
+            this.SEMnameLabel.TabIndex = 71;
+            // 
+            // SEMdateLabel
+            // 
+            this.SEMdateLabel.AutoSize = true;
+            this.SEMdateLabel.Location = new System.Drawing.Point(143, 0);
+            this.SEMdateLabel.Name = "SEMdateLabel";
+            this.SEMdateLabel.Size = new System.Drawing.Size(0, 15);
+            this.SEMdateLabel.TabIndex = 72;
+            // 
+            // SEMyearInfoLabel
+            // 
+            this.SEMyearInfoLabel.AutoSize = true;
+            this.SEMyearInfoLabel.Location = new System.Drawing.Point(1377, 261);
+            this.SEMyearInfoLabel.Name = "SEMyearInfoLabel";
+            this.SEMyearInfoLabel.Size = new System.Drawing.Size(35, 15);
+            this.SEMyearInfoLabel.TabIndex = 74;
+            this.SEMyearInfoLabel.Text = "YEAR";
             // 
             // Timetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1524, 641);
+            this.Controls.Add(this.SEMyearInfoLabel);
             this.Controls.Add(this.semestersPanel);
             this.Controls.Add(this.SEMnumInfoLabel);
             this.Controls.Add(this.SEMnameInfoLabel);
@@ -864,5 +881,7 @@
         private Label SEMhourLabel;
         private Label SEMnameLabel;
         private Label SEMdateLabel;
+        private Label SEMyearLabel;
+        private Label SEMyearInfoLabel;
     }
 }

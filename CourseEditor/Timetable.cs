@@ -36,6 +36,7 @@ namespace CourseEditor
             this.SEMnameLabel.Text = "";
             this.SEMdateLabel.Text = "";
             this.SEMhourLabel.Text = "";
+            this.SEMyearLabel.Text = "";
         }
 
         private void DisplayCourses()
@@ -90,6 +91,8 @@ namespace CourseEditor
                 this.SEMdateLabel.Text += "\n" + document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(i).Element(ns + "END_DATE").Value;
 
                 this.SEMhourLabel.Text += "\n" + document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(i).Element(ns + "END_HOUR").Value;
+
+                this.SEMyearLabel.Text += "\n" + document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(i).Attribute("year").Value;
 
                 i++;
 
