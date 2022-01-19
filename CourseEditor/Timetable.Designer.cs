@@ -266,6 +266,7 @@
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(0, 15);
             this.errorLabel.TabIndex = 23;
+            this.errorLabel.ForeColor = System.Drawing.Color.Red;
             // 
             // debugLabel
             // 
