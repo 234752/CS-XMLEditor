@@ -68,8 +68,18 @@
             this.editButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.NoDisplayLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.coursesPanel = new System.Windows.Forms.Panel();
+            this.numInfoLabel = new System.Windows.Forms.Label();
+            this.nameInfoLabel = new System.Windows.Forms.Label();
+            this.idInfoLabel = new System.Windows.Forms.Label();
+            this.ectsInfoLabel = new System.Windows.Forms.Label();
+            this.lecInfoLabel = new System.Windows.Forms.Label();
+            this.tutInfoLabel = new System.Windows.Forms.Label();
+            this.labInfoLabel = new System.Windows.Forms.Label();
+            this.dateInfoLabel = new System.Windows.Forms.Label();
+            this.weightInfoLabel = new System.Windows.Forms.Label();
+            this.semInfoLabel = new System.Windows.Forms.Label();
+            this.coursesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // authorLabel
@@ -84,83 +94,74 @@
             // numLabel
             // 
             this.numLabel.AutoSize = true;
-            this.numLabel.Location = new System.Drawing.Point(6, 13);
+            this.numLabel.Location = new System.Drawing.Point(6, 0);
             this.numLabel.Name = "numLabel";
-            this.numLabel.Size = new System.Drawing.Size(23, 15);
+            this.numLabel.Size = new System.Drawing.Size(0, 15);
             this.numLabel.TabIndex = 1;
-            this.numLabel.Text = "No";
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(109, 13);
+            this.nameLabel.Location = new System.Drawing.Point(109, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(41, 15);
+            this.nameLabel.Size = new System.Drawing.Size(0, 15);
             this.nameLabel.TabIndex = 2;
-            this.nameLabel.Text = "NAME";
             // 
             // idLabel
             // 
             this.idLabel.AutoSize = true;
-            this.idLabel.Location = new System.Drawing.Point(423, 13);
+            this.idLabel.Location = new System.Drawing.Point(423, 0);
             this.idLabel.Name = "idLabel";
-            this.idLabel.Size = new System.Drawing.Size(18, 15);
+            this.idLabel.Size = new System.Drawing.Size(0, 15);
             this.idLabel.TabIndex = 3;
-            this.idLabel.Text = "ID";
             // 
             // ectsLabel
             // 
             this.ectsLabel.AutoSize = true;
-            this.ectsLabel.Location = new System.Drawing.Point(503, 13);
+            this.ectsLabel.Location = new System.Drawing.Point(503, 0);
             this.ectsLabel.Name = "ectsLabel";
-            this.ectsLabel.Size = new System.Drawing.Size(33, 15);
+            this.ectsLabel.Size = new System.Drawing.Size(0, 15);
             this.ectsLabel.TabIndex = 4;
-            this.ectsLabel.Text = "ECTS";
             // 
             // lecLabel
             // 
             this.lecLabel.AutoSize = true;
-            this.lecLabel.Location = new System.Drawing.Point(542, 13);
+            this.lecLabel.Location = new System.Drawing.Point(542, 0);
             this.lecLabel.Name = "lecLabel";
-            this.lecLabel.Size = new System.Drawing.Size(66, 15);
+            this.lecLabel.Size = new System.Drawing.Size(0, 15);
             this.lecLabel.TabIndex = 5;
-            this.lecLabel.Text = "LECTURE H";
             // 
             // tutLabel
             // 
             this.tutLabel.AutoSize = true;
-            this.tutLabel.Location = new System.Drawing.Point(614, 13);
+            this.tutLabel.Location = new System.Drawing.Point(614, 0);
             this.tutLabel.Name = "tutLabel";
-            this.tutLabel.Size = new System.Drawing.Size(71, 15);
+            this.tutLabel.Size = new System.Drawing.Size(0, 15);
             this.tutLabel.TabIndex = 6;
-            this.tutLabel.Text = "TUTORIAL H";
             // 
             // labLabel
             // 
             this.labLabel.AutoSize = true;
-            this.labLabel.Location = new System.Drawing.Point(691, 13);
+            this.labLabel.Location = new System.Drawing.Point(691, 0);
             this.labLabel.Name = "labLabel";
-            this.labLabel.Size = new System.Drawing.Size(91, 15);
+            this.labLabel.Size = new System.Drawing.Size(0, 15);
             this.labLabel.TabIndex = 7;
-            this.labLabel.Text = "LABORATORY H";
             // 
             // dateLabel
             // 
             this.dateLabel.AutoSize = true;
-            this.dateLabel.Location = new System.Drawing.Point(788, 13);
+            this.dateLabel.Location = new System.Drawing.Point(788, 0);
             this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(82, 15);
+            this.dateLabel.Size = new System.Drawing.Size(0, 15);
             this.dateLabel.TabIndex = 8;
-            this.dateLabel.Text = "DATE GRADED";
             // 
             // weightLabel
             // 
             this.weightLabel.AutoSize = true;
-            this.weightLabel.Location = new System.Drawing.Point(876, 13);
+            this.weightLabel.Location = new System.Drawing.Point(876, 0);
             this.weightLabel.Name = "weightLabel";
-            this.weightLabel.Size = new System.Drawing.Size(50, 15);
+            this.weightLabel.Size = new System.Drawing.Size(0, 15);
             this.weightLabel.TabIndex = 9;
-            this.weightLabel.Text = "WEIGHT";
             // 
             // loadButton
             // 
@@ -255,11 +256,10 @@
             // semLabel
             // 
             this.semLabel.AutoSize = true;
-            this.semLabel.Location = new System.Drawing.Point(42, 13);
+            this.semLabel.Location = new System.Drawing.Point(42, 0);
             this.semLabel.Name = "semLabel";
-            this.semLabel.Size = new System.Drawing.Size(61, 15);
+            this.semLabel.Size = new System.Drawing.Size(0, 15);
             this.semLabel.TabIndex = 22;
-            this.semLabel.Text = "SEMESTER";
             // 
             // errorLabel
             // 
@@ -398,30 +398,130 @@
             this.NoDisplayLabel.TabIndex = 39;
             this.NoDisplayLabel.Text = "No:";
             // 
-            // panel1
+            // coursesPanel
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.numLabel);
-            this.panel1.Controls.Add(this.nameLabel);
-            this.panel1.Controls.Add(this.idLabel);
-            this.panel1.Controls.Add(this.ectsLabel);
-            this.panel1.Controls.Add(this.lecLabel);
-            this.panel1.Controls.Add(this.tutLabel);
-            this.panel1.Controls.Add(this.labLabel);
-            this.panel1.Controls.Add(this.dateLabel);
-            this.panel1.Controls.Add(this.weightLabel);
-            this.panel1.Controls.Add(this.semLabel);
-            this.panel1.Location = new System.Drawing.Point(12, 156);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1008, 473);
-            this.panel1.TabIndex = 40;
+            this.coursesPanel.AutoScroll = true;
+            this.coursesPanel.Controls.Add(this.numLabel);
+            this.coursesPanel.Controls.Add(this.nameLabel);
+            this.coursesPanel.Controls.Add(this.idLabel);
+            this.coursesPanel.Controls.Add(this.ectsLabel);
+            this.coursesPanel.Controls.Add(this.lecLabel);
+            this.coursesPanel.Controls.Add(this.tutLabel);
+            this.coursesPanel.Controls.Add(this.labLabel);
+            this.coursesPanel.Controls.Add(this.dateLabel);
+            this.coursesPanel.Controls.Add(this.weightLabel);
+            this.coursesPanel.Controls.Add(this.semLabel);
+            this.coursesPanel.Location = new System.Drawing.Point(12, 185);
+            this.coursesPanel.Name = "coursesPanel";
+            this.coursesPanel.Size = new System.Drawing.Size(1008, 444);
+            this.coursesPanel.TabIndex = 40;
+            // 
+            // numInfoLabel
+            // 
+            this.numInfoLabel.AutoSize = true;
+            this.numInfoLabel.Location = new System.Drawing.Point(18, 167);
+            this.numInfoLabel.Name = "numInfoLabel";
+            this.numInfoLabel.Size = new System.Drawing.Size(23, 15);
+            this.numInfoLabel.TabIndex = 41;
+            this.numInfoLabel.Text = "No";
+            // 
+            // nameInfoLabel
+            // 
+            this.nameInfoLabel.AutoSize = true;
+            this.nameInfoLabel.Location = new System.Drawing.Point(121, 167);
+            this.nameInfoLabel.Name = "nameInfoLabel";
+            this.nameInfoLabel.Size = new System.Drawing.Size(41, 15);
+            this.nameInfoLabel.TabIndex = 42;
+            this.nameInfoLabel.Text = "NAME";
+            // 
+            // idInfoLabel
+            // 
+            this.idInfoLabel.AutoSize = true;
+            this.idInfoLabel.Location = new System.Drawing.Point(435, 167);
+            this.idInfoLabel.Name = "idInfoLabel";
+            this.idInfoLabel.Size = new System.Drawing.Size(18, 15);
+            this.idInfoLabel.TabIndex = 43;
+            this.idInfoLabel.Text = "ID";
+            // 
+            // ectsInfoLabel
+            // 
+            this.ectsInfoLabel.AutoSize = true;
+            this.ectsInfoLabel.Location = new System.Drawing.Point(515, 167);
+            this.ectsInfoLabel.Name = "ectsInfoLabel";
+            this.ectsInfoLabel.Size = new System.Drawing.Size(33, 15);
+            this.ectsInfoLabel.TabIndex = 44;
+            this.ectsInfoLabel.Text = "ECTS";
+            // 
+            // lecInfoLabel
+            // 
+            this.lecInfoLabel.AutoSize = true;
+            this.lecInfoLabel.Location = new System.Drawing.Point(554, 167);
+            this.lecInfoLabel.Name = "lecInfoLabel";
+            this.lecInfoLabel.Size = new System.Drawing.Size(66, 15);
+            this.lecInfoLabel.TabIndex = 45;
+            this.lecInfoLabel.Text = "LECTURE H";
+            // 
+            // tutInfoLabel
+            // 
+            this.tutInfoLabel.AutoSize = true;
+            this.tutInfoLabel.Location = new System.Drawing.Point(626, 167);
+            this.tutInfoLabel.Name = "tutInfoLabel";
+            this.tutInfoLabel.Size = new System.Drawing.Size(71, 15);
+            this.tutInfoLabel.TabIndex = 46;
+            this.tutInfoLabel.Text = "TUTORIAL H";
+            // 
+            // labInfoLabel
+            // 
+            this.labInfoLabel.AutoSize = true;
+            this.labInfoLabel.Location = new System.Drawing.Point(703, 167);
+            this.labInfoLabel.Name = "labInfoLabel";
+            this.labInfoLabel.Size = new System.Drawing.Size(91, 15);
+            this.labInfoLabel.TabIndex = 47;
+            this.labInfoLabel.Text = "LABORATORY H";
+            // 
+            // dateInfoLabel
+            // 
+            this.dateInfoLabel.AutoSize = true;
+            this.dateInfoLabel.Location = new System.Drawing.Point(800, 167);
+            this.dateInfoLabel.Name = "dateInfoLabel";
+            this.dateInfoLabel.Size = new System.Drawing.Size(82, 15);
+            this.dateInfoLabel.TabIndex = 48;
+            this.dateInfoLabel.Text = "DATE GRADED";
+            // 
+            // weightInfoLabel
+            // 
+            this.weightInfoLabel.AutoSize = true;
+            this.weightInfoLabel.Location = new System.Drawing.Point(888, 167);
+            this.weightInfoLabel.Name = "weightInfoLabel";
+            this.weightInfoLabel.Size = new System.Drawing.Size(50, 15);
+            this.weightInfoLabel.TabIndex = 49;
+            this.weightInfoLabel.Text = "WEIGHT";
+            // 
+            // semInfoLabel
+            // 
+            this.semInfoLabel.AutoSize = true;
+            this.semInfoLabel.Location = new System.Drawing.Point(54, 167);
+            this.semInfoLabel.Name = "semInfoLabel";
+            this.semInfoLabel.Size = new System.Drawing.Size(61, 15);
+            this.semInfoLabel.TabIndex = 50;
+            this.semInfoLabel.Text = "SEMESTER";
             // 
             // Timetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1357, 641);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.numInfoLabel);
+            this.Controls.Add(this.nameInfoLabel);
+            this.Controls.Add(this.idInfoLabel);
+            this.Controls.Add(this.ectsInfoLabel);
+            this.Controls.Add(this.lecInfoLabel);
+            this.Controls.Add(this.tutInfoLabel);
+            this.Controls.Add(this.labInfoLabel);
+            this.Controls.Add(this.dateInfoLabel);
+            this.Controls.Add(this.weightInfoLabel);
+            this.Controls.Add(this.semInfoLabel);
+            this.Controls.Add(this.coursesPanel);
             this.Controls.Add(this.NoDisplayLabel);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.editButton);
@@ -454,8 +554,8 @@
             this.Controls.Add(this.authorLabel);
             this.Name = "Timetable";
             this.Text = "TIMETABLE";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.coursesPanel.ResumeLayout(false);
+            this.coursesPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,6 +603,16 @@
         private Button editButton;
         private Button deleteButton;
         private Label NoDisplayLabel;
-        private Panel panel1;
+        private Panel coursesPanel;
+        private Label numInfoLabel;
+        private Label nameInfoLabel;
+        private Label idInfoLabel;
+        private Label ectsInfoLabel;
+        private Label lecInfoLabel;
+        private Label tutInfoLabel;
+        private Label labInfoLabel;
+        private Label dateInfoLabel;
+        private Label weightInfoLabel;
+        private Label semInfoLabel;
     }
 }

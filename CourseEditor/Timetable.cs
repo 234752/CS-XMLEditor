@@ -17,17 +17,17 @@ namespace CourseEditor
 
         private void ClearLabels()
         {
-            this.authorLabel.Text = "AUTHOR";
-            this.numLabel.Text = "No";
-            this.semLabel.Text = "SEMESTER";
-            this.nameLabel.Text = "NAME";
-            this.idLabel.Text = "ID";
-            this.ectsLabel.Text = "ECTS";
-            this.lecLabel.Text = "LECTURE H";
-            this.tutLabel.Text = "TUTORIAL H";
-            this.labLabel.Text = "LABORATORY H";
-            this.dateLabel.Text = "DATE GRADED";
-            this.weightLabel.Text = "WEIGHT";
+            this.authorLabel.Text = "";
+            this.numLabel.Text = "";
+            this.semLabel.Text = "";
+            this.nameLabel.Text = "";
+            this.idLabel.Text = "";
+            this.ectsLabel.Text = "";
+            this.lecLabel.Text = "";
+            this.tutLabel.Text = "";
+            this.labLabel.Text = "";
+            this.dateLabel.Text = "";
+            this.weightLabel.Text = "";
             this.errorLabel.Text = "";
         }
 
