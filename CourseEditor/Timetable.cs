@@ -214,8 +214,11 @@ namespace CourseEditor
                 edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "LECTURE_H").Value = this.lecEdit.Text;
                 edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "TUTORIAL_H").Value = this.tutEdit.Text;
                 edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "LABORATORY_H").Value = this.labEdit.Text;
+                double w = int.Parse( this.ectsEdit.Text) / 30.0;
+                string weight0 = w.ToString("F2");
+                edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "WEIGHT").Value = weight0;
 
-                if(edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "GRADING_DATE").Attribute("graded").Value=="true"
+                if (edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "GRADING_DATE").Attribute("graded").Value=="true"
                     && this.dateEdit.Text=="")
                 {
                     edited.Element(ns + "COURSES_LIST").Element(ns + "COURSES").Descendants(ns + "COURSE").ElementAt(index).Element(ns + "GRADING_DATE").Attribute("graded").Value = "false";
