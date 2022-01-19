@@ -639,6 +639,7 @@
             this.SEMaddButton.TabIndex = 55;
             this.SEMaddButton.Text = "ADD";
             this.SEMaddButton.UseVisualStyleBackColor = true;
+            this.SEMaddButton.Click += new System.EventHandler(this.SEMaddButton_Click);
             // 
             // SEMhourInput
             // 

@@ -184,6 +184,48 @@ namespace CourseEditor
             return false;
         }
 
+        private bool AddSemester()
+        {
+
+            try
+            {
+                XDocument updated = new XDocument(document);
+                int number0 = int.Parse(this.SEMnumInput.Text);
+                string name0 = this.SEMnameInput.Text;
+                string date0 = this.SEMdateInput.Text;
+                string hour0 = this.SEMhourInput.Text;
+                int year0 = number0/2 + number0 % 2;
+
+
+
+                XNamespace ns = "timetable.pl";
+
+
+                
+
+                updated.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Add(
+                     new XElement(ns + "SEMESTER",
+                        new XAttribute("semID", "S"+number0),
+                        new XAttribute("year", year0),
+                        new XElement(ns +"S_NAME", name0),
+                        new XElement(ns +"END_DATE", date0),
+                        new XElement(ns +"END_HOUR", hour0)
+                         ));
+
+                if (ValidateDocument(updated))
+                {
+                    document = updated;
+                    return true;
+                }
+            }
+            catch (System.Exception ex)
+            {
+                return false;
+            }
+
+            return false;
+        }
+
         private void DisplayByIndex(int index0)
         {            
             var baseNamespace = new XmlNamespaceManager(new NameTable());
@@ -361,6 +403,16 @@ namespace CourseEditor
             {
                 this.errorLabel.Text = "Cannot edit selected course. Please make sure that such index exists and entered data is valid.";
             }
+        }
+
+        private void SEMaddButton_Click(object sender, EventArgs e)
+        {
+            if (AddSemester())
+            {
+                ClearSEMLabels();
+                DisplaySemesters();
+            }
+            else this.errorLabel.Text = "Cannot add semester. Please make sure that entered data is valid.";
         }
     }
 }
