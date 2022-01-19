@@ -87,16 +87,22 @@
             this.SEMdeleteButton = new System.Windows.Forms.Button();
             this.SEMeditButton = new System.Windows.Forms.Button();
             this.SEMdisplayButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.SEMhourEdit = new System.Windows.Forms.TextBox();
+            this.SEMdateEdit = new System.Windows.Forms.TextBox();
+            this.SEMnameEdit = new System.Windows.Forms.TextBox();
+            this.SEMNoEdit = new System.Windows.Forms.TextBox();
             this.SEMaddButton = new System.Windows.Forms.Button();
             this.SEMhourInput = new System.Windows.Forms.TextBox();
             this.SEMdateInput = new System.Windows.Forms.TextBox();
             this.SEMnameInput = new System.Windows.Forms.TextBox();
             this.SEMnumInput = new System.Windows.Forms.TextBox();
+            this.semestersPanel = new System.Windows.Forms.Panel();
+            this.SEMnumLabel = new System.Windows.Forms.Label();
+            this.SEMnameLabel = new System.Windows.Forms.Label();
+            this.SEMdateLabel = new System.Windows.Forms.Label();
+            this.SEMhourLabel = new System.Windows.Forms.Label();
             this.coursesPanel.SuspendLayout();
+            this.semestersPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // authorLabel
@@ -526,7 +532,7 @@
             // SEMnumInfoLabel
             // 
             this.SEMnumInfoLabel.AutoSize = true;
-            this.SEMnumInfoLabel.Location = new System.Drawing.Point(1085, 261);
+            this.SEMnumInfoLabel.Location = new System.Drawing.Point(1058, 261);
             this.SEMnumInfoLabel.Name = "SEMnumInfoLabel";
             this.SEMnumInfoLabel.Size = new System.Drawing.Size(23, 15);
             this.SEMnumInfoLabel.TabIndex = 65;
@@ -535,7 +541,7 @@
             // SEMnameInfoLabel
             // 
             this.SEMnameInfoLabel.AutoSize = true;
-            this.SEMnameInfoLabel.Location = new System.Drawing.Point(1115, 261);
+            this.SEMnameInfoLabel.Location = new System.Drawing.Point(1087, 261);
             this.SEMnameInfoLabel.Name = "SEMnameInfoLabel";
             this.SEMnameInfoLabel.Size = new System.Drawing.Size(41, 15);
             this.SEMnameInfoLabel.TabIndex = 66;
@@ -544,20 +550,20 @@
             // SEMdateInfoLabel
             // 
             this.SEMdateInfoLabel.AutoSize = true;
-            this.SEMdateInfoLabel.Location = new System.Drawing.Point(1192, 261);
+            this.SEMdateInfoLabel.Location = new System.Drawing.Point(1201, 261);
             this.SEMdateInfoLabel.Name = "SEMdateInfoLabel";
-            this.SEMdateInfoLabel.Size = new System.Drawing.Size(34, 15);
+            this.SEMdateInfoLabel.Size = new System.Drawing.Size(60, 15);
             this.SEMdateInfoLabel.TabIndex = 67;
-            this.SEMdateInfoLabel.Text = "DATE";
+            this.SEMdateInfoLabel.Text = "END DATE";
             // 
             // SEMhourInfoLabel
             // 
             this.SEMhourInfoLabel.AutoSize = true;
             this.SEMhourInfoLabel.Location = new System.Drawing.Point(1289, 261);
             this.SEMhourInfoLabel.Name = "SEMhourInfoLabel";
-            this.SEMhourInfoLabel.Size = new System.Drawing.Size(40, 15);
+            this.SEMhourInfoLabel.Size = new System.Drawing.Size(66, 15);
             this.SEMhourInfoLabel.TabIndex = 68;
-            this.SEMhourInfoLabel.Text = "HOUR";
+            this.SEMhourInfoLabel.Text = "END HOUR";
             // 
             // label6
             // 
@@ -595,33 +601,33 @@
             this.SEMdisplayButton.Text = "DISPLAY";
             this.SEMdisplayButton.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // SEMhourEdit
             // 
-            this.textBox1.Location = new System.Drawing.Point(1289, 185);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(82, 23);
-            this.textBox1.TabIndex = 60;
+            this.SEMhourEdit.Location = new System.Drawing.Point(1289, 185);
+            this.SEMhourEdit.Name = "SEMhourEdit";
+            this.SEMhourEdit.Size = new System.Drawing.Size(82, 23);
+            this.SEMhourEdit.TabIndex = 60;
             // 
-            // textBox2
+            // SEMdateEdit
             // 
-            this.textBox2.Location = new System.Drawing.Point(1192, 185);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(91, 23);
-            this.textBox2.TabIndex = 59;
+            this.SEMdateEdit.Location = new System.Drawing.Point(1201, 185);
+            this.SEMdateEdit.Name = "SEMdateEdit";
+            this.SEMdateEdit.Size = new System.Drawing.Size(82, 23);
+            this.SEMdateEdit.TabIndex = 59;
             // 
-            // textBox3
+            // SEMnameEdit
             // 
-            this.textBox3.Location = new System.Drawing.Point(1115, 185);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(71, 23);
-            this.textBox3.TabIndex = 58;
+            this.SEMnameEdit.Location = new System.Drawing.Point(1087, 185);
+            this.SEMnameEdit.Name = "SEMnameEdit";
+            this.SEMnameEdit.Size = new System.Drawing.Size(108, 23);
+            this.SEMnameEdit.TabIndex = 58;
             // 
-            // textBox5
+            // SEMNoEdit
             // 
-            this.textBox5.Location = new System.Drawing.Point(1409, 152);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(23, 23);
-            this.textBox5.TabIndex = 56;
+            this.SEMNoEdit.Location = new System.Drawing.Point(1409, 152);
+            this.SEMNoEdit.Name = "SEMNoEdit";
+            this.SEMNoEdit.Size = new System.Drawing.Size(23, 23);
+            this.SEMNoEdit.TabIndex = 56;
             // 
             // SEMaddButton
             // 
@@ -641,30 +647,79 @@
             // 
             // SEMdateInput
             // 
-            this.SEMdateInput.Location = new System.Drawing.Point(1192, 221);
+            this.SEMdateInput.Location = new System.Drawing.Point(1201, 221);
             this.SEMdateInput.Name = "SEMdateInput";
-            this.SEMdateInput.Size = new System.Drawing.Size(91, 23);
+            this.SEMdateInput.Size = new System.Drawing.Size(82, 23);
             this.SEMdateInput.TabIndex = 53;
             // 
             // SEMnameInput
             // 
-            this.SEMnameInput.Location = new System.Drawing.Point(1115, 221);
+            this.SEMnameInput.Location = new System.Drawing.Point(1087, 221);
             this.SEMnameInput.Name = "SEMnameInput";
-            this.SEMnameInput.Size = new System.Drawing.Size(71, 23);
+            this.SEMnameInput.Size = new System.Drawing.Size(108, 23);
             this.SEMnameInput.TabIndex = 52;
             // 
             // SEMnumInput
             // 
-            this.SEMnumInput.Location = new System.Drawing.Point(1085, 221);
+            this.SEMnumInput.Location = new System.Drawing.Point(1058, 221);
             this.SEMnumInput.Name = "SEMnumInput";
-            this.SEMnumInput.Size = new System.Drawing.Size(24, 23);
+            this.SEMnumInput.Size = new System.Drawing.Size(23, 23);
             this.SEMnumInput.TabIndex = 51;
+            // 
+            // semestersPanel
+            // 
+            this.semestersPanel.Controls.Add(this.SEMnumLabel);
+            this.semestersPanel.Controls.Add(this.SEMhourLabel);
+            this.semestersPanel.Controls.Add(this.SEMnameLabel);
+            this.semestersPanel.Controls.Add(this.SEMdateLabel);
+            this.semestersPanel.Location = new System.Drawing.Point(1058, 279);
+            this.semestersPanel.Name = "semestersPanel";
+            this.semestersPanel.Size = new System.Drawing.Size(313, 239);
+            this.semestersPanel.TabIndex = 69;
+            this.semestersPanel.AutoScroll = true;
+            // 
+            // SEMnumLabel
+            // 
+            this.SEMnumLabel.AutoSize = true;
+            this.SEMnumLabel.Location = new System.Drawing.Point(0, 0);
+            this.SEMnumLabel.Name = "SEMnumLabel";
+            this.SEMnumLabel.Size = new System.Drawing.Size(23, 15);
+            this.SEMnumLabel.TabIndex = 70;
+            this.SEMnumLabel.Text = "No";
+            // 
+            // SEMnameLabel
+            // 
+            this.SEMnameLabel.AutoSize = true;
+            this.SEMnameLabel.Location = new System.Drawing.Point(29, 0);
+            this.SEMnameLabel.Name = "SEMnameLabel";
+            this.SEMnameLabel.Size = new System.Drawing.Size(41, 15);
+            this.SEMnameLabel.TabIndex = 71;
+            this.SEMnameLabel.Text = "NAME";
+            // 
+            // SEMdateLabel
+            // 
+            this.SEMdateLabel.AutoSize = true;
+            this.SEMdateLabel.Location = new System.Drawing.Point(143, 0);
+            this.SEMdateLabel.Name = "SEMdateLabel";
+            this.SEMdateLabel.Size = new System.Drawing.Size(60, 15);
+            this.SEMdateLabel.TabIndex = 72;
+            this.SEMdateLabel.Text = "END DATE";
+            // 
+            // SEMhourLabel
+            // 
+            this.SEMhourLabel.AutoSize = true;
+            this.SEMhourLabel.Location = new System.Drawing.Point(231, 0);
+            this.SEMhourLabel.Name = "SEMhourLabel";
+            this.SEMhourLabel.Size = new System.Drawing.Size(66, 15);
+            this.SEMhourLabel.TabIndex = 73;
+            this.SEMhourLabel.Text = "END HOUR";
             // 
             // Timetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1524, 641);
+            this.Controls.Add(this.semestersPanel);
             this.Controls.Add(this.SEMnumInfoLabel);
             this.Controls.Add(this.SEMnameInfoLabel);
             this.Controls.Add(this.SEMdateInfoLabel);
@@ -673,10 +728,10 @@
             this.Controls.Add(this.SEMdeleteButton);
             this.Controls.Add(this.SEMeditButton);
             this.Controls.Add(this.SEMdisplayButton);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.SEMhourEdit);
+            this.Controls.Add(this.SEMdateEdit);
+            this.Controls.Add(this.SEMnameEdit);
+            this.Controls.Add(this.SEMNoEdit);
             this.Controls.Add(this.SEMaddButton);
             this.Controls.Add(this.SEMhourInput);
             this.Controls.Add(this.SEMdateInput);
@@ -727,6 +782,8 @@
             this.Text = "TIMETABLE";
             this.coursesPanel.ResumeLayout(false);
             this.coursesPanel.PerformLayout();
+            this.semestersPanel.ResumeLayout(false);
+            this.semestersPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -793,14 +850,19 @@
         private Button SEMdeleteButton;
         private Button SEMeditButton;
         private Button SEMdisplayButton;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox5;
+        private TextBox SEMhourEdit;
+        private TextBox SEMdateEdit;
+        private TextBox SEMnameEdit;
+        private TextBox SEMNoEdit;
         private Button SEMaddButton;
         private TextBox SEMhourInput;
         private TextBox SEMdateInput;
         private TextBox SEMnameInput;
         private TextBox SEMnumInput;
+        private Panel semestersPanel;
+        private Label SEMnumLabel;
+        private Label SEMhourLabel;
+        private Label SEMnameLabel;
+        private Label SEMdateLabel;
     }
 }
