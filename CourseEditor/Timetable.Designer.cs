@@ -584,6 +584,7 @@
             this.SEMdeleteButton.TabIndex = 63;
             this.SEMdeleteButton.Text = "DELETE";
             this.SEMdeleteButton.UseVisualStyleBackColor = true;
+            this.SEMdeleteButton.Click += new System.EventHandler(this.SEMdeleteButton_Click);
             // 
             // SEMeditButton
             // 

@@ -464,5 +464,20 @@ namespace CourseEditor
                 this.errorLabel.Text = "Cannot display selected semester. Please make sure that such index exists.";
             }
         }
+
+        private void SEMdeleteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int selectedIndex = int.Parse(this.SEMNoEdit.Text);
+                DeleteSEMByIndex(selectedIndex);
+                ClearSEMLabels();
+                DisplaySemesters();
+            }
+            catch (System.Exception ex)
+            {
+                this.errorLabel.Text = "Cannot delete selected semester. Please make sure that such index exists and that document will be valid after deletion.";
+            }
+        }
     }
 }
