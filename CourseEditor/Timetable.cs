@@ -37,6 +37,7 @@ namespace CourseEditor
             this.SEMdateLabel.Text = "";
             this.SEMhourLabel.Text = "";
             this.SEMyearLabel.Text = "";
+            this.errorLabel.Text = "";
         }
 
         private void DisplayCourses()
@@ -278,6 +279,23 @@ namespace CourseEditor
                 XDocument deleted = new XDocument(document);
                 deleted.Element(ns +"COURSES_LIST").Element(ns +"COURSES").Descendants(ns +"COURSE").ElementAt(index).Remove();
                 if(ValidateDocument(deleted)) document = deleted;
+                else throw new System.Exception();
+            }
+            else throw new System.Exception();
+        }
+
+        private void DeleteSEMByIndex(int index0)
+        {
+            XNamespace ns = "timetable.pl";
+
+            int index = document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER")
+                    .Where(x => x.Attribute("semID").Value == "S" + index0.ToString()).Last().ElementsBeforeSelf().Count();
+
+            if (index >= 0 && index < document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").Count())
+            {
+                XDocument deleted = new XDocument(document);
+                deleted.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(index).Remove();
+                if (ValidateDocument(deleted)) document = deleted;
                 else throw new System.Exception();
             }
             else throw new System.Exception();
