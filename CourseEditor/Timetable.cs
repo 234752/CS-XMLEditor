@@ -378,7 +378,7 @@ namespace CourseEditor
             }
         }
 
-        private void showButton_Click(object sender, EventArgs e)
+        private void displayButton_Click(object sender, EventArgs e)
         {
             try
             {

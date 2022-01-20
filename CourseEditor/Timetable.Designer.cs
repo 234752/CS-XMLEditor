@@ -56,7 +56,7 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.fileOutput = new System.Windows.Forms.TextBox();
             this.semEdit = new System.Windows.Forms.TextBox();
-            this.showButton = new System.Windows.Forms.Button();
+            this.displayButton = new System.Windows.Forms.Button();
             this.dateEdit = new System.Windows.Forms.TextBox();
             this.labEdit = new System.Windows.Forms.TextBox();
             this.tutEdit = new System.Windows.Forms.TextBox();
@@ -328,15 +328,15 @@
             this.semEdit.Size = new System.Drawing.Size(61, 23);
             this.semEdit.TabIndex = 36;
             // 
-            // showButton
+            // displayButton
             // 
-            this.showButton.Location = new System.Drawing.Point(957, 57);
-            this.showButton.Name = "showButton";
-            this.showButton.Size = new System.Drawing.Size(63, 23);
-            this.showButton.TabIndex = 35;
-            this.showButton.Text = "DISPLAY";
-            this.showButton.UseVisualStyleBackColor = true;
-            this.showButton.Click += new System.EventHandler(this.showButton_Click);
+            this.displayButton.Location = new System.Drawing.Point(957, 57);
+            this.displayButton.Name = "displayButton";
+            this.displayButton.Size = new System.Drawing.Size(63, 23);
+            this.displayButton.TabIndex = 35;
+            this.displayButton.Text = "DISPLAY";
+            this.displayButton.UseVisualStyleBackColor = true;
+            this.displayButton.Click += new System.EventHandler(this.displayButton_Click);
             // 
             // dateEdit
             // 
@@ -770,7 +770,7 @@
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.semEdit);
-            this.Controls.Add(this.showButton);
+            this.Controls.Add(this.displayButton);
             this.Controls.Add(this.dateEdit);
             this.Controls.Add(this.labEdit);
             this.Controls.Add(this.tutEdit);
@@ -837,7 +837,7 @@
         private Button saveButton;
         private TextBox fileOutput;
         private TextBox semEdit;
-        private Button showButton;
+        private Button displayButton;
         private TextBox dateEdit;
         private TextBox labEdit;
         private TextBox tutEdit;
