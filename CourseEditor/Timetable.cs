@@ -249,6 +249,23 @@ namespace CourseEditor
             else throw new System.Exception();
         }
 
+        private void DisplaySEMByIndex(int index0)
+        {
+            
+            XNamespace ns = "timetable.pl";
+
+            int index = document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER")
+                .Where(x => x.Attribute("semID").Value == "S" + index0.ToString()).Last().ElementsBeforeSelf().Count();
+
+            if (index >= 0 && index < document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").Count())
+            {
+                this.SEMnameEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(index).Element(ns + "S_NAME").Value;
+                this.SEMdateEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(index).Element(ns + "END_DATE").Value;
+                this.SEMhourEdit.Text = document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(index).Element(ns + "END_HOUR").Value;
+            }
+            else throw new System.Exception();
+        }
+
         private void DeleteByIndex(int index0)
         {
             XNamespace ns = "timetable.pl";
