@@ -431,5 +431,20 @@ namespace CourseEditor
             }
             else this.errorLabel.Text = "Cannot add semester. Please make sure that entered data is valid.";
         }
+
+        private void SEMdisplayButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int selectedIndex = int.Parse(this.SEMNoEdit.Text);
+                DisplaySEMByIndex(selectedIndex);
+                ClearSEMLabels();
+                DisplaySemesters();
+            }
+            catch (System.Exception ex)
+            {
+                this.errorLabel.Text = "Cannot display selected semester. Please make sure that such index exists.";
+            }
+        }
     }
 }

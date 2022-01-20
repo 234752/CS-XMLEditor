@@ -602,6 +602,7 @@
             this.SEMdisplayButton.TabIndex = 61;
             this.SEMdisplayButton.Text = "DISPLAY";
             this.SEMdisplayButton.UseVisualStyleBackColor = true;
+            this.SEMdisplayButton.Click += new System.EventHandler(this.SEMdisplayButton_Click);
             // 
             // SEMhourEdit
             // 
