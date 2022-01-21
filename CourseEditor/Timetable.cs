@@ -351,6 +351,35 @@ namespace CourseEditor
 
         }
 
+        private void EditSEMByIndex(int index0)
+        {
+            
+            XNamespace ns = "timetable.pl";
+
+            int index = document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER")
+                    .Where(x => x.Attribute("semID").Value == "S" + index0.ToString()).Last().ElementsBeforeSelf().Count();
+
+            XDocument edited = new XDocument(document);
+
+            if (index >= 0 && index < document.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").Count())
+            {
+                
+                edited.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(index).Element(ns + "S_NAME").Value = this.SEMnameEdit.Text;
+                edited.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(index).Element(ns + "END_DATE").Value = this.SEMdateEdit.Text;
+                edited.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(index).Element(ns + "END_HOUR").Value = this.SEMhourEdit.Text;
+
+                int number0 = int.Parse(this.SEMnumInput.Text);
+                int year0 = number0 / 2 + number0 % 2;
+                edited.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(index).Attribute("year").Value = year0.ToString();
+
+
+                if (ValidateDocument(edited)) document = edited;
+                else throw new System.Exception();
+            }
+            else throw new System.Exception();
+
+        }
+
         private void loadButton_Click(object sender, EventArgs e)
         {
             string filename = this.fileInput.Text;
