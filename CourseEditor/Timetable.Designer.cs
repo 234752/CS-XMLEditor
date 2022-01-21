@@ -594,6 +594,7 @@
             this.SEMeditButton.TabIndex = 62;
             this.SEMeditButton.Text = "EDIT";
             this.SEMeditButton.UseVisualStyleBackColor = true;
+            this.SEMeditButton.Click += new System.EventHandler(this.SEMeditButton_Click);
             // 
             // SEMdisplayButton
             // 

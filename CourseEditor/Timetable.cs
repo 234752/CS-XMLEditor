@@ -368,7 +368,7 @@ namespace CourseEditor
                 edited.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(index).Element(ns + "END_DATE").Value = this.SEMdateEdit.Text;
                 edited.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(index).Element(ns + "END_HOUR").Value = this.SEMhourEdit.Text;
 
-                int number0 = int.Parse(this.SEMnumInput.Text);
+                int number0 = int.Parse(this.SEMNoEdit.Text);
                 int year0 = number0 / 2 + number0 % 2;
                 edited.Element(ns + "COURSES_LIST").Element(ns + "SEMESTERS").Descendants(ns + "SEMESTER").ElementAt(index).Attribute("year").Value = year0.ToString();
 
@@ -506,6 +506,21 @@ namespace CourseEditor
             catch (System.Exception ex)
             {
                 this.errorLabel.Text = "Cannot delete selected semester. Please make sure that such index exists and that document will be valid after deletion.";
+            }
+        }
+
+        private void SEMeditButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int selectedIndex = int.Parse(this.SEMNoEdit.Text);
+                EditSEMByIndex(selectedIndex);
+                ClearSEMLabels();
+                DisplaySemesters();
+            }
+            catch (System.Exception ex)
+            {
+                this.errorLabel.Text = "Cannot edit selected semester. Please make sure that such index exists and entered data is valid.";
             }
         }
     }
