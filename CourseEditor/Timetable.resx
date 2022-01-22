@@ -58,7 +58,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="guideLabel.Text" xml:space="preserve">
-    <value>User Guide
+    <value>                    USER GUIDE
 1. Startup - enter filepath and press 'Load XML'
 2. Adding - fill texfields in 2nd row for either course or semester and press 'ADD' 
                     [remember that id/number must be unique]
@@ -66,7 +66,7 @@
 4. Editing - type nr of chosen course/semester into 'No:' texbox, edit desired values
                     in 1st row textfields and press 'EDIT' 
                     [pressing 'DISPLAY' will autofill values into 1st row, 
-                      which may be usefull when editing only part of the data]
+                      which may be useful when editing only part of the data]
 5. Finishing work - enter filepath and press 'Save as' 
                      [entering filepath to currently used file will overwrite changes, 
                        while entering new path will create new file]
