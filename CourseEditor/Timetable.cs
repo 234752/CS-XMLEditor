@@ -523,5 +523,6 @@ namespace CourseEditor
                 this.errorLabel.Text = "Cannot edit selected semester. Please make sure that such index exists and entered data is valid.";
             }
         }
+
     }
 }

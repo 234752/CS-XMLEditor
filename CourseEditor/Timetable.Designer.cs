@@ -83,7 +83,7 @@
             this.SEMnameInfoLabel = new System.Windows.Forms.Label();
             this.SEMdateInfoLabel = new System.Windows.Forms.Label();
             this.SEMhourInfoLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.SEMNoDisplayLabel = new System.Windows.Forms.Label();
             this.SEMdeleteButton = new System.Windows.Forms.Button();
             this.SEMeditButton = new System.Windows.Forms.Button();
             this.SEMdisplayButton = new System.Windows.Forms.Button();
@@ -104,6 +104,8 @@
             this.SEMdateLabel = new System.Windows.Forms.Label();
             this.SEMyearInfoLabel = new System.Windows.Forms.Label();
             this.guideLabel = new System.Windows.Forms.Label();
+            this.coursesListLabel = new System.Windows.Forms.Label();
+            this.semestersListLabel = new System.Windows.Forms.Label();
             this.coursesPanel.SuspendLayout();
             this.semestersPanel.SuspendLayout();
             this.SuspendLayout();
@@ -111,6 +113,7 @@
             // authorLabel
             // 
             this.authorLabel.AutoSize = true;
+            this.authorLabel.ForeColor = System.Drawing.Color.Green;
             this.authorLabel.Location = new System.Drawing.Point(12, 9);
             this.authorLabel.Name = "authorLabel";
             this.authorLabel.Size = new System.Drawing.Size(54, 15);
@@ -128,7 +131,7 @@
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(109, 0);
+            this.nameLabel.Location = new System.Drawing.Point(74, 0);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(0, 15);
             this.nameLabel.TabIndex = 2;
@@ -136,7 +139,7 @@
             // idLabel
             // 
             this.idLabel.AutoSize = true;
-            this.idLabel.Location = new System.Drawing.Point(423, 0);
+            this.idLabel.Location = new System.Drawing.Point(388, 0);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(0, 15);
             this.idLabel.TabIndex = 3;
@@ -144,7 +147,7 @@
             // ectsLabel
             // 
             this.ectsLabel.AutoSize = true;
-            this.ectsLabel.Location = new System.Drawing.Point(503, 0);
+            this.ectsLabel.Location = new System.Drawing.Point(468, 0);
             this.ectsLabel.Name = "ectsLabel";
             this.ectsLabel.Size = new System.Drawing.Size(0, 15);
             this.ectsLabel.TabIndex = 4;
@@ -152,7 +155,7 @@
             // lecLabel
             // 
             this.lecLabel.AutoSize = true;
-            this.lecLabel.Location = new System.Drawing.Point(542, 0);
+            this.lecLabel.Location = new System.Drawing.Point(507, 0);
             this.lecLabel.Name = "lecLabel";
             this.lecLabel.Size = new System.Drawing.Size(0, 15);
             this.lecLabel.TabIndex = 5;
@@ -160,7 +163,7 @@
             // tutLabel
             // 
             this.tutLabel.AutoSize = true;
-            this.tutLabel.Location = new System.Drawing.Point(614, 0);
+            this.tutLabel.Location = new System.Drawing.Point(552, 0);
             this.tutLabel.Name = "tutLabel";
             this.tutLabel.Size = new System.Drawing.Size(0, 15);
             this.tutLabel.TabIndex = 6;
@@ -168,7 +171,7 @@
             // labLabel
             // 
             this.labLabel.AutoSize = true;
-            this.labLabel.Location = new System.Drawing.Point(691, 0);
+            this.labLabel.Location = new System.Drawing.Point(597, 0);
             this.labLabel.Name = "labLabel";
             this.labLabel.Size = new System.Drawing.Size(0, 15);
             this.labLabel.TabIndex = 7;
@@ -176,7 +179,7 @@
             // dateLabel
             // 
             this.dateLabel.AutoSize = true;
-            this.dateLabel.Location = new System.Drawing.Point(788, 0);
+            this.dateLabel.Location = new System.Drawing.Point(646, 0);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(0, 15);
             this.dateLabel.TabIndex = 8;
@@ -184,14 +187,15 @@
             // weightLabel
             // 
             this.weightLabel.AutoSize = true;
-            this.weightLabel.Location = new System.Drawing.Point(876, 0);
+            this.weightLabel.Location = new System.Drawing.Point(734, 0);
             this.weightLabel.Name = "weightLabel";
             this.weightLabel.Size = new System.Drawing.Size(0, 15);
             this.weightLabel.TabIndex = 9;
             // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(1379, 12);
+            this.loadButton.ForeColor = System.Drawing.Color.Green;
+            this.loadButton.Location = new System.Drawing.Point(1188, 12);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(75, 23);
             this.loadButton.TabIndex = 10;
@@ -201,7 +205,7 @@
             // 
             // fileInput
             // 
-            this.fileInput.Location = new System.Drawing.Point(1273, 12);
+            this.fileInput.Location = new System.Drawing.Point(1082, 12);
             this.fileInput.Name = "fileInput";
             this.fileInput.Size = new System.Drawing.Size(100, 23);
             this.fileInput.TabIndex = 11;
@@ -215,56 +219,57 @@
             // 
             // nameInput
             // 
-            this.nameInput.Location = new System.Drawing.Point(121, 128);
+            this.nameInput.Location = new System.Drawing.Point(86, 128);
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(308, 23);
             this.nameInput.TabIndex = 13;
             // 
             // idInput
             // 
-            this.idInput.Location = new System.Drawing.Point(435, 127);
+            this.idInput.Location = new System.Drawing.Point(399, 128);
             this.idInput.Name = "idInput";
             this.idInput.Size = new System.Drawing.Size(75, 23);
             this.idInput.TabIndex = 14;
             // 
             // ectsInput
             // 
-            this.ectsInput.Location = new System.Drawing.Point(515, 127);
+            this.ectsInput.Location = new System.Drawing.Point(480, 128);
             this.ectsInput.Name = "ectsInput";
             this.ectsInput.Size = new System.Drawing.Size(33, 23);
             this.ectsInput.TabIndex = 15;
             // 
             // lecInput
             // 
-            this.lecInput.Location = new System.Drawing.Point(554, 127);
+            this.lecInput.Location = new System.Drawing.Point(519, 128);
             this.lecInput.Name = "lecInput";
-            this.lecInput.Size = new System.Drawing.Size(66, 23);
+            this.lecInput.Size = new System.Drawing.Size(39, 23);
             this.lecInput.TabIndex = 16;
             // 
             // tutInput
             // 
-            this.tutInput.Location = new System.Drawing.Point(626, 127);
+            this.tutInput.Location = new System.Drawing.Point(564, 128);
             this.tutInput.Name = "tutInput";
-            this.tutInput.Size = new System.Drawing.Size(71, 23);
+            this.tutInput.Size = new System.Drawing.Size(39, 23);
             this.tutInput.TabIndex = 17;
             // 
             // labInput
             // 
-            this.labInput.Location = new System.Drawing.Point(703, 127);
+            this.labInput.Location = new System.Drawing.Point(609, 128);
             this.labInput.Name = "labInput";
-            this.labInput.Size = new System.Drawing.Size(91, 23);
+            this.labInput.Size = new System.Drawing.Size(43, 23);
             this.labInput.TabIndex = 18;
             // 
             // dateInput
             // 
-            this.dateInput.Location = new System.Drawing.Point(800, 127);
+            this.dateInput.Location = new System.Drawing.Point(658, 128);
             this.dateInput.Name = "dateInput";
             this.dateInput.Size = new System.Drawing.Size(82, 23);
             this.dateInput.TabIndex = 19;
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(888, 127);
+            this.addButton.ForeColor = System.Drawing.Color.Blue;
+            this.addButton.Location = new System.Drawing.Point(746, 128);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(63, 23);
             this.addButton.TabIndex = 20;
@@ -274,15 +279,15 @@
             // 
             // semInput
             // 
-            this.semInput.Location = new System.Drawing.Point(54, 128);
+            this.semInput.Location = new System.Drawing.Point(47, 128);
             this.semInput.Name = "semInput";
-            this.semInput.Size = new System.Drawing.Size(61, 23);
+            this.semInput.Size = new System.Drawing.Size(33, 23);
             this.semInput.TabIndex = 21;
             // 
             // semLabel
             // 
             this.semLabel.AutoSize = true;
-            this.semLabel.Location = new System.Drawing.Point(42, 0);
+            this.semLabel.Location = new System.Drawing.Point(35, 0);
             this.semLabel.Name = "semLabel";
             this.semLabel.Size = new System.Drawing.Size(0, 15);
             this.semLabel.TabIndex = 22;
@@ -291,14 +296,15 @@
             // 
             this.errorLabel.AutoSize = true;
             this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(510, 12);
+            this.errorLabel.Location = new System.Drawing.Point(407, 9);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(0, 15);
             this.errorLabel.TabIndex = 23;
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(1379, 41);
+            this.saveButton.ForeColor = System.Drawing.Color.Green;
+            this.saveButton.Location = new System.Drawing.Point(1188, 41);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 25;
@@ -308,21 +314,22 @@
             // 
             // fileOutput
             // 
-            this.fileOutput.Location = new System.Drawing.Point(1273, 42);
+            this.fileOutput.Location = new System.Drawing.Point(1082, 42);
             this.fileOutput.Name = "fileOutput";
             this.fileOutput.Size = new System.Drawing.Size(100, 23);
             this.fileOutput.TabIndex = 26;
             // 
             // semEdit
             // 
-            this.semEdit.Location = new System.Drawing.Point(54, 91);
+            this.semEdit.Location = new System.Drawing.Point(47, 99);
             this.semEdit.Name = "semEdit";
-            this.semEdit.Size = new System.Drawing.Size(61, 23);
+            this.semEdit.Size = new System.Drawing.Size(33, 23);
             this.semEdit.TabIndex = 36;
             // 
             // displayButton
             // 
-            this.displayButton.Location = new System.Drawing.Point(957, 57);
+            this.displayButton.ForeColor = System.Drawing.Color.Blue;
+            this.displayButton.Location = new System.Drawing.Point(815, 70);
             this.displayButton.Name = "displayButton";
             this.displayButton.Size = new System.Drawing.Size(63, 23);
             this.displayButton.TabIndex = 35;
@@ -332,63 +339,64 @@
             // 
             // dateEdit
             // 
-            this.dateEdit.Location = new System.Drawing.Point(800, 91);
+            this.dateEdit.Location = new System.Drawing.Point(658, 99);
             this.dateEdit.Name = "dateEdit";
             this.dateEdit.Size = new System.Drawing.Size(82, 23);
             this.dateEdit.TabIndex = 34;
             // 
             // labEdit
             // 
-            this.labEdit.Location = new System.Drawing.Point(703, 91);
+            this.labEdit.Location = new System.Drawing.Point(609, 99);
             this.labEdit.Name = "labEdit";
-            this.labEdit.Size = new System.Drawing.Size(91, 23);
+            this.labEdit.Size = new System.Drawing.Size(43, 23);
             this.labEdit.TabIndex = 33;
             // 
             // tutEdit
             // 
-            this.tutEdit.Location = new System.Drawing.Point(626, 91);
+            this.tutEdit.Location = new System.Drawing.Point(564, 99);
             this.tutEdit.Name = "tutEdit";
-            this.tutEdit.Size = new System.Drawing.Size(71, 23);
+            this.tutEdit.Size = new System.Drawing.Size(39, 23);
             this.tutEdit.TabIndex = 32;
             // 
             // lecEdit
             // 
-            this.lecEdit.Location = new System.Drawing.Point(554, 91);
+            this.lecEdit.Location = new System.Drawing.Point(519, 99);
             this.lecEdit.Name = "lecEdit";
-            this.lecEdit.Size = new System.Drawing.Size(66, 23);
+            this.lecEdit.Size = new System.Drawing.Size(39, 23);
             this.lecEdit.TabIndex = 31;
             // 
             // ectsEdit
             // 
-            this.ectsEdit.Location = new System.Drawing.Point(515, 91);
+            this.ectsEdit.Location = new System.Drawing.Point(480, 99);
             this.ectsEdit.Name = "ectsEdit";
             this.ectsEdit.Size = new System.Drawing.Size(33, 23);
             this.ectsEdit.TabIndex = 30;
             // 
             // idEdit
             // 
-            this.idEdit.Location = new System.Drawing.Point(435, 91);
+            this.idEdit.Location = new System.Drawing.Point(400, 99);
             this.idEdit.Name = "idEdit";
             this.idEdit.Size = new System.Drawing.Size(75, 23);
             this.idEdit.TabIndex = 29;
             // 
             // nameEdit
             // 
-            this.nameEdit.Location = new System.Drawing.Point(121, 91);
+            this.nameEdit.Location = new System.Drawing.Point(86, 99);
             this.nameEdit.Name = "nameEdit";
             this.nameEdit.Size = new System.Drawing.Size(308, 23);
             this.nameEdit.TabIndex = 28;
             // 
             // NoEdit
             // 
-            this.NoEdit.Location = new System.Drawing.Point(920, 58);
+            this.NoEdit.Location = new System.Drawing.Point(778, 71);
             this.NoEdit.Name = "NoEdit";
             this.NoEdit.Size = new System.Drawing.Size(23, 23);
             this.NoEdit.TabIndex = 27;
             // 
             // editButton
             // 
-            this.editButton.Location = new System.Drawing.Point(888, 90);
+            this.editButton.ForeColor = System.Drawing.Color.Blue;
+            this.editButton.Location = new System.Drawing.Point(746, 99);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(63, 23);
             this.editButton.TabIndex = 37;
@@ -398,7 +406,8 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(957, 90);
+            this.deleteButton.ForeColor = System.Drawing.Color.Blue;
+            this.deleteButton.Location = new System.Drawing.Point(815, 99);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(63, 23);
             this.deleteButton.TabIndex = 38;
@@ -409,7 +418,8 @@
             // NoDisplayLabel
             // 
             this.NoDisplayLabel.AutoSize = true;
-            this.NoDisplayLabel.Location = new System.Drawing.Point(888, 61);
+            this.NoDisplayLabel.ForeColor = System.Drawing.Color.Blue;
+            this.NoDisplayLabel.Location = new System.Drawing.Point(746, 74);
             this.NoDisplayLabel.Name = "NoDisplayLabel";
             this.NoDisplayLabel.Size = new System.Drawing.Size(26, 15);
             this.NoDisplayLabel.TabIndex = 39;
@@ -430,12 +440,13 @@
             this.coursesPanel.Controls.Add(this.semLabel);
             this.coursesPanel.Location = new System.Drawing.Point(12, 185);
             this.coursesPanel.Name = "coursesPanel";
-            this.coursesPanel.Size = new System.Drawing.Size(967, 444);
+            this.coursesPanel.Size = new System.Drawing.Size(797, 444);
             this.coursesPanel.TabIndex = 40;
             // 
             // numInfoLabel
             // 
             this.numInfoLabel.AutoSize = true;
+            this.numInfoLabel.ForeColor = System.Drawing.Color.Blue;
             this.numInfoLabel.Location = new System.Drawing.Point(18, 167);
             this.numInfoLabel.Name = "numInfoLabel";
             this.numInfoLabel.Size = new System.Drawing.Size(23, 15);
@@ -445,7 +456,8 @@
             // nameInfoLabel
             // 
             this.nameInfoLabel.AutoSize = true;
-            this.nameInfoLabel.Location = new System.Drawing.Point(121, 167);
+            this.nameInfoLabel.ForeColor = System.Drawing.Color.Blue;
+            this.nameInfoLabel.Location = new System.Drawing.Point(86, 167);
             this.nameInfoLabel.Name = "nameInfoLabel";
             this.nameInfoLabel.Size = new System.Drawing.Size(41, 15);
             this.nameInfoLabel.TabIndex = 42;
@@ -454,7 +466,8 @@
             // idInfoLabel
             // 
             this.idInfoLabel.AutoSize = true;
-            this.idInfoLabel.Location = new System.Drawing.Point(435, 167);
+            this.idInfoLabel.ForeColor = System.Drawing.Color.Blue;
+            this.idInfoLabel.Location = new System.Drawing.Point(400, 167);
             this.idInfoLabel.Name = "idInfoLabel";
             this.idInfoLabel.Size = new System.Drawing.Size(18, 15);
             this.idInfoLabel.TabIndex = 43;
@@ -463,7 +476,8 @@
             // ectsInfoLabel
             // 
             this.ectsInfoLabel.AutoSize = true;
-            this.ectsInfoLabel.Location = new System.Drawing.Point(515, 167);
+            this.ectsInfoLabel.ForeColor = System.Drawing.Color.Blue;
+            this.ectsInfoLabel.Location = new System.Drawing.Point(480, 167);
             this.ectsInfoLabel.Name = "ectsInfoLabel";
             this.ectsInfoLabel.Size = new System.Drawing.Size(33, 15);
             this.ectsInfoLabel.TabIndex = 44;
@@ -472,34 +486,38 @@
             // lecInfoLabel
             // 
             this.lecInfoLabel.AutoSize = true;
-            this.lecInfoLabel.Location = new System.Drawing.Point(554, 167);
+            this.lecInfoLabel.ForeColor = System.Drawing.Color.Blue;
+            this.lecInfoLabel.Location = new System.Drawing.Point(519, 167);
             this.lecInfoLabel.Name = "lecInfoLabel";
-            this.lecInfoLabel.Size = new System.Drawing.Size(66, 15);
+            this.lecInfoLabel.Size = new System.Drawing.Size(42, 15);
             this.lecInfoLabel.TabIndex = 45;
-            this.lecInfoLabel.Text = "LECTURE H";
+            this.lecInfoLabel.Text = "LEC. H";
             // 
             // tutInfoLabel
             // 
             this.tutInfoLabel.AutoSize = true;
-            this.tutInfoLabel.Location = new System.Drawing.Point(626, 167);
+            this.tutInfoLabel.ForeColor = System.Drawing.Color.Blue;
+            this.tutInfoLabel.Location = new System.Drawing.Point(564, 167);
             this.tutInfoLabel.Name = "tutInfoLabel";
-            this.tutInfoLabel.Size = new System.Drawing.Size(71, 15);
+            this.tutInfoLabel.Size = new System.Drawing.Size(42, 15);
             this.tutInfoLabel.TabIndex = 46;
-            this.tutInfoLabel.Text = "TUTORIAL H";
+            this.tutInfoLabel.Text = "TUT. H";
             // 
             // labInfoLabel
             // 
             this.labInfoLabel.AutoSize = true;
-            this.labInfoLabel.Location = new System.Drawing.Point(703, 167);
+            this.labInfoLabel.ForeColor = System.Drawing.Color.Blue;
+            this.labInfoLabel.Location = new System.Drawing.Point(609, 167);
             this.labInfoLabel.Name = "labInfoLabel";
-            this.labInfoLabel.Size = new System.Drawing.Size(91, 15);
+            this.labInfoLabel.Size = new System.Drawing.Size(43, 15);
             this.labInfoLabel.TabIndex = 47;
-            this.labInfoLabel.Text = "LABORATORY H";
+            this.labInfoLabel.Text = "LAB. H";
             // 
             // dateInfoLabel
             // 
             this.dateInfoLabel.AutoSize = true;
-            this.dateInfoLabel.Location = new System.Drawing.Point(800, 167);
+            this.dateInfoLabel.ForeColor = System.Drawing.Color.Blue;
+            this.dateInfoLabel.Location = new System.Drawing.Point(658, 167);
             this.dateInfoLabel.Name = "dateInfoLabel";
             this.dateInfoLabel.Size = new System.Drawing.Size(82, 15);
             this.dateInfoLabel.TabIndex = 48;
@@ -508,7 +526,8 @@
             // weightInfoLabel
             // 
             this.weightInfoLabel.AutoSize = true;
-            this.weightInfoLabel.Location = new System.Drawing.Point(888, 167);
+            this.weightInfoLabel.ForeColor = System.Drawing.Color.Blue;
+            this.weightInfoLabel.Location = new System.Drawing.Point(746, 167);
             this.weightInfoLabel.Name = "weightInfoLabel";
             this.weightInfoLabel.Size = new System.Drawing.Size(50, 15);
             this.weightInfoLabel.TabIndex = 49;
@@ -517,16 +536,18 @@
             // semInfoLabel
             // 
             this.semInfoLabel.AutoSize = true;
-            this.semInfoLabel.Location = new System.Drawing.Point(54, 167);
+            this.semInfoLabel.ForeColor = System.Drawing.Color.Blue;
+            this.semInfoLabel.Location = new System.Drawing.Point(47, 167);
             this.semInfoLabel.Name = "semInfoLabel";
-            this.semInfoLabel.Size = new System.Drawing.Size(61, 15);
+            this.semInfoLabel.Size = new System.Drawing.Size(33, 15);
             this.semInfoLabel.TabIndex = 50;
-            this.semInfoLabel.Text = "SEMESTER";
+            this.semInfoLabel.Text = "SEM.";
             // 
             // SEMnumInfoLabel
             // 
             this.SEMnumInfoLabel.AutoSize = true;
-            this.SEMnumInfoLabel.Location = new System.Drawing.Point(1003, 236);
+            this.SEMnumInfoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.SEMnumInfoLabel.Location = new System.Drawing.Point(815, 454);
             this.SEMnumInfoLabel.Name = "SEMnumInfoLabel";
             this.SEMnumInfoLabel.Size = new System.Drawing.Size(23, 15);
             this.SEMnumInfoLabel.TabIndex = 65;
@@ -535,7 +556,8 @@
             // SEMnameInfoLabel
             // 
             this.SEMnameInfoLabel.AutoSize = true;
-            this.SEMnameInfoLabel.Location = new System.Drawing.Point(1032, 236);
+            this.SEMnameInfoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.SEMnameInfoLabel.Location = new System.Drawing.Point(844, 454);
             this.SEMnameInfoLabel.Name = "SEMnameInfoLabel";
             this.SEMnameInfoLabel.Size = new System.Drawing.Size(41, 15);
             this.SEMnameInfoLabel.TabIndex = 66;
@@ -544,7 +566,8 @@
             // SEMdateInfoLabel
             // 
             this.SEMdateInfoLabel.AutoSize = true;
-            this.SEMdateInfoLabel.Location = new System.Drawing.Point(1146, 236);
+            this.SEMdateInfoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.SEMdateInfoLabel.Location = new System.Drawing.Point(958, 454);
             this.SEMdateInfoLabel.Name = "SEMdateInfoLabel";
             this.SEMdateInfoLabel.Size = new System.Drawing.Size(60, 15);
             this.SEMdateInfoLabel.TabIndex = 67;
@@ -553,24 +576,27 @@
             // SEMhourInfoLabel
             // 
             this.SEMhourInfoLabel.AutoSize = true;
-            this.SEMhourInfoLabel.Location = new System.Drawing.Point(1234, 236);
+            this.SEMhourInfoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.SEMhourInfoLabel.Location = new System.Drawing.Point(1046, 454);
             this.SEMhourInfoLabel.Name = "SEMhourInfoLabel";
             this.SEMhourInfoLabel.Size = new System.Drawing.Size(66, 15);
             this.SEMhourInfoLabel.TabIndex = 68;
             this.SEMhourInfoLabel.Text = "END HOUR";
             // 
-            // label6
+            // SEMNoDisplayLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1322, 130);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 15);
-            this.label6.TabIndex = 64;
-            this.label6.Text = "No:";
+            this.SEMNoDisplayLabel.AutoSize = true;
+            this.SEMNoDisplayLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.SEMNoDisplayLabel.Location = new System.Drawing.Point(1134, 355);
+            this.SEMNoDisplayLabel.Name = "SEMNoDisplayLabel";
+            this.SEMNoDisplayLabel.Size = new System.Drawing.Size(26, 15);
+            this.SEMNoDisplayLabel.TabIndex = 64;
+            this.SEMNoDisplayLabel.Text = "No:";
             // 
             // SEMdeleteButton
             // 
-            this.SEMdeleteButton.Location = new System.Drawing.Point(1391, 159);
+            this.SEMdeleteButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.SEMdeleteButton.Location = new System.Drawing.Point(1203, 384);
             this.SEMdeleteButton.Name = "SEMdeleteButton";
             this.SEMdeleteButton.Size = new System.Drawing.Size(63, 23);
             this.SEMdeleteButton.TabIndex = 63;
@@ -580,7 +606,8 @@
             // 
             // SEMeditButton
             // 
-            this.SEMeditButton.Location = new System.Drawing.Point(1322, 159);
+            this.SEMeditButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.SEMeditButton.Location = new System.Drawing.Point(1134, 384);
             this.SEMeditButton.Name = "SEMeditButton";
             this.SEMeditButton.Size = new System.Drawing.Size(63, 23);
             this.SEMeditButton.TabIndex = 62;
@@ -590,7 +617,8 @@
             // 
             // SEMdisplayButton
             // 
-            this.SEMdisplayButton.Location = new System.Drawing.Point(1391, 126);
+            this.SEMdisplayButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.SEMdisplayButton.Location = new System.Drawing.Point(1203, 351);
             this.SEMdisplayButton.Name = "SEMdisplayButton";
             this.SEMdisplayButton.Size = new System.Drawing.Size(63, 23);
             this.SEMdisplayButton.TabIndex = 61;
@@ -600,35 +628,36 @@
             // 
             // SEMhourEdit
             // 
-            this.SEMhourEdit.Location = new System.Drawing.Point(1234, 160);
+            this.SEMhourEdit.Location = new System.Drawing.Point(1046, 385);
             this.SEMhourEdit.Name = "SEMhourEdit";
             this.SEMhourEdit.Size = new System.Drawing.Size(82, 23);
             this.SEMhourEdit.TabIndex = 60;
             // 
             // SEMdateEdit
             // 
-            this.SEMdateEdit.Location = new System.Drawing.Point(1146, 160);
+            this.SEMdateEdit.Location = new System.Drawing.Point(958, 385);
             this.SEMdateEdit.Name = "SEMdateEdit";
             this.SEMdateEdit.Size = new System.Drawing.Size(82, 23);
             this.SEMdateEdit.TabIndex = 59;
             // 
             // SEMnameEdit
             // 
-            this.SEMnameEdit.Location = new System.Drawing.Point(1032, 160);
+            this.SEMnameEdit.Location = new System.Drawing.Point(844, 385);
             this.SEMnameEdit.Name = "SEMnameEdit";
             this.SEMnameEdit.Size = new System.Drawing.Size(108, 23);
             this.SEMnameEdit.TabIndex = 58;
             // 
             // SEMNoEdit
             // 
-            this.SEMNoEdit.Location = new System.Drawing.Point(1354, 127);
+            this.SEMNoEdit.Location = new System.Drawing.Point(1166, 352);
             this.SEMNoEdit.Name = "SEMNoEdit";
             this.SEMNoEdit.Size = new System.Drawing.Size(23, 23);
             this.SEMNoEdit.TabIndex = 56;
             // 
             // SEMaddButton
             // 
-            this.SEMaddButton.Location = new System.Drawing.Point(1322, 196);
+            this.SEMaddButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.SEMaddButton.Location = new System.Drawing.Point(1134, 414);
             this.SEMaddButton.Name = "SEMaddButton";
             this.SEMaddButton.Size = new System.Drawing.Size(63, 23);
             this.SEMaddButton.TabIndex = 55;
@@ -638,28 +667,28 @@
             // 
             // SEMhourInput
             // 
-            this.SEMhourInput.Location = new System.Drawing.Point(1234, 196);
+            this.SEMhourInput.Location = new System.Drawing.Point(1046, 414);
             this.SEMhourInput.Name = "SEMhourInput";
             this.SEMhourInput.Size = new System.Drawing.Size(82, 23);
             this.SEMhourInput.TabIndex = 54;
             // 
             // SEMdateInput
             // 
-            this.SEMdateInput.Location = new System.Drawing.Point(1146, 196);
+            this.SEMdateInput.Location = new System.Drawing.Point(958, 414);
             this.SEMdateInput.Name = "SEMdateInput";
             this.SEMdateInput.Size = new System.Drawing.Size(82, 23);
             this.SEMdateInput.TabIndex = 53;
             // 
             // SEMnameInput
             // 
-            this.SEMnameInput.Location = new System.Drawing.Point(1032, 196);
+            this.SEMnameInput.Location = new System.Drawing.Point(844, 414);
             this.SEMnameInput.Name = "SEMnameInput";
             this.SEMnameInput.Size = new System.Drawing.Size(108, 23);
             this.SEMnameInput.TabIndex = 52;
             // 
             // SEMnumInput
             // 
-            this.SEMnumInput.Location = new System.Drawing.Point(1003, 196);
+            this.SEMnumInput.Location = new System.Drawing.Point(815, 414);
             this.SEMnumInput.Name = "SEMnumInput";
             this.SEMnumInput.Size = new System.Drawing.Size(23, 23);
             this.SEMnumInput.TabIndex = 51;
@@ -672,7 +701,7 @@
             this.semestersPanel.Controls.Add(this.SEMhourLabel);
             this.semestersPanel.Controls.Add(this.SEMnameLabel);
             this.semestersPanel.Controls.Add(this.SEMdateLabel);
-            this.semestersPanel.Location = new System.Drawing.Point(1003, 254);
+            this.semestersPanel.Location = new System.Drawing.Point(815, 472);
             this.semestersPanel.Name = "semestersPanel";
             this.semestersPanel.Size = new System.Drawing.Size(382, 157);
             this.semestersPanel.TabIndex = 69;
@@ -720,7 +749,8 @@
             // SEMyearInfoLabel
             // 
             this.SEMyearInfoLabel.AutoSize = true;
-            this.SEMyearInfoLabel.Location = new System.Drawing.Point(1322, 236);
+            this.SEMyearInfoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.SEMyearInfoLabel.Location = new System.Drawing.Point(1134, 454);
             this.SEMyearInfoLabel.Name = "SEMyearInfoLabel";
             this.SEMyearInfoLabel.Size = new System.Drawing.Size(35, 15);
             this.SEMyearInfoLabel.TabIndex = 74;
@@ -729,18 +759,42 @@
             // guideLabel
             // 
             this.guideLabel.AutoSize = true;
-            this.guideLabel.ForeColor = System.Drawing.Color.Blue;
-            this.guideLabel.Location = new System.Drawing.Point(996, 428);
+            this.guideLabel.ForeColor = System.Drawing.Color.Green;
+            this.guideLabel.Location = new System.Drawing.Point(815, 156);
             this.guideLabel.Name = "guideLabel";
             this.guideLabel.Size = new System.Drawing.Size(447, 180);
-            this.guideLabel.TabIndex = 75;
+            this.guideLabel.TabIndex = 76;
             this.guideLabel.Text = resources.GetString("guideLabel.Text");
+            // 
+            // coursesListLabel
+            // 
+            this.coursesListLabel.AutoSize = true;
+            this.coursesListLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.coursesListLabel.ForeColor = System.Drawing.Color.Blue;
+            this.coursesListLabel.Location = new System.Drawing.Point(344, 64);
+            this.coursesListLabel.Name = "coursesListLabel";
+            this.coursesListLabel.Size = new System.Drawing.Size(130, 25);
+            this.coursesListLabel.TabIndex = 77;
+            this.coursesListLabel.Text = "COURSES LIST";
+            // 
+            // semestersListLabel
+            // 
+            this.semestersListLabel.AutoSize = true;
+            this.semestersListLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.semestersListLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.semestersListLabel.Location = new System.Drawing.Point(927, 347);
+            this.semestersListLabel.Name = "semestersListLabel";
+            this.semestersListLabel.Size = new System.Drawing.Size(149, 25);
+            this.semestersListLabel.TabIndex = 78;
+            this.semestersListLabel.Text = "SEMESTERS LIST";
             // 
             // Timetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1469, 641);
+            this.ClientSize = new System.Drawing.Size(1274, 641);
+            this.Controls.Add(this.semestersListLabel);
+            this.Controls.Add(this.coursesListLabel);
             this.Controls.Add(this.guideLabel);
             this.Controls.Add(this.SEMyearInfoLabel);
             this.Controls.Add(this.semestersPanel);
@@ -748,7 +802,7 @@
             this.Controls.Add(this.SEMnameInfoLabel);
             this.Controls.Add(this.SEMdateInfoLabel);
             this.Controls.Add(this.SEMhourInfoLabel);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.SEMNoDisplayLabel);
             this.Controls.Add(this.SEMdeleteButton);
             this.Controls.Add(this.SEMeditButton);
             this.Controls.Add(this.SEMdisplayButton);
@@ -868,7 +922,7 @@
         private Label SEMnameInfoLabel;
         private Label SEMdateInfoLabel;
         private Label SEMhourInfoLabel;
-        private Label label6;
+        private Label SEMNoDisplayLabel;
         private Button SEMdeleteButton;
         private Button SEMeditButton;
         private Button SEMdisplayButton;
@@ -889,5 +943,7 @@
         private Label SEMyearLabel;
         private Label SEMyearInfoLabel;
         private Label guideLabel;
+        private Label coursesListLabel;
+        private Label semestersListLabel;
     }
 }
